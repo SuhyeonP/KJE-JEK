@@ -1,3 +1,4 @@
-import { Title } from './Title';
+import { ProjectModak } from './section/ProjectModak';
+import { Title } from './section/Title';
 
-export { Title };
+export { Title, ProjectModak };

@@ -5,6 +5,8 @@ const TitleStyled = styled.div`
   top: calc(-50vh + 48.43px);
   padding-top: calc(50vh - 48.43px);
 
+  z-index: 100;
+
   background-color: white;
 
   text-align: center;

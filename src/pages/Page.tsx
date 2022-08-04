@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Title } from '../component';
+import { ProjectModak, Title } from '../component';
 
 //  @media screen and (max-width: 412px) {
 //   }
@@ -14,7 +14,6 @@ const PageStyled = styled.div`
 
     & > div {
       min-height: calc(100vh - 48.43px);
-      background-color: cornflowerblue;
     }
   }
 `;
@@ -24,8 +23,8 @@ const Page = (): JSX.Element => {
     <PageStyled>
       <Title />
       <div className="section">
-        <div>content</div>
-        <div>content2</div>
+        <ProjectModak />
+        <ProjectModak />
       </div>
     </PageStyled>
   );
