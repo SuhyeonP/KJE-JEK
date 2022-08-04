@@ -3,5 +3,7 @@ import { InviteTicket } from './section/InviteTicket';
 import { ProjectModak } from './section/ProjectModak';
 import { Title } from './section/Title';
 import { WeddingInfo } from './section/WeddingInfo';
+import { WeddingPicture } from './section/WeddingPicture';
+import { WhoIsModak } from './section/WhoIsModak';
 
-export { Title, ProjectModak, WeddingInfo, GuideContent, InviteTicket };
+export { Title, ProjectModak, WeddingInfo, GuideContent, InviteTicket, WeddingPicture, WhoIsModak };
