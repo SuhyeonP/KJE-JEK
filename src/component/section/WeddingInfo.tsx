@@ -3,13 +3,9 @@ import { MainTitle } from 'component/common';
 import { colorPalette } from 'color/colorPalette';
 
 const WeddingInfoStyled = styled.div`
-  padding: 79px 30px 0;
+  padding: 79px 0 0;
 
   text-align: center;
-
-  p {
-    font-family: 'AppleSDGothicNeo', 'Noto Sans KR', sans-serif;
-  }
 
   .wedding-info {
     padding-top: 9px;
@@ -38,6 +34,9 @@ const WeddingInfoStyled = styled.div`
   }
 
   .how-to-come {
+    display: block;
+    width: 93%;
+    margin: 0 auto;
     text-align: left;
 
     & > div {

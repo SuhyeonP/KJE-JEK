@@ -4,7 +4,7 @@ interface IStyledProps {
   color: string;
 }
 
-const PageTitleStyled = styled.p<IStyledProps>(
+const PageTitleStyled = styled.span<IStyledProps>(
   ({ color }) => `
   color: ${color};
   font-size: 28px;
