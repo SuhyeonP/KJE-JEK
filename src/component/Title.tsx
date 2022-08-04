@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 const TitleStyled = styled.div`
   position: sticky;
-  top: -80px;
+  top: -60px;
   padding-top: 100px;
 
   background-color: white;
