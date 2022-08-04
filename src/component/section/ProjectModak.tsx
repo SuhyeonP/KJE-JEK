@@ -29,7 +29,7 @@ const ProjectModakStyled = styled.div`
 
     margin-top: 300px;
     height: 547px;
-    background-color: red;
+    background-color: rgba(255, 0, 0, 0.15);
   }
 `;
 
