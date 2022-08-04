@@ -1,33 +1,47 @@
 import styled from '@emotion/styled';
 import { content } from '../../content';
+import { PageTitle } from '../common/PageTitle';
 
 const ProjectModakStyled = styled.div`
   display: flex;
   align-items: flex-end;
 
-  background-color: bisque;
   .temp-modak {
     position: absolute;
-    height: 200px;
-    width: 200px;
-    background-color: darkgray;
-    transform: translate(50%, -100px);
+    top: -100px;
+    //transform: translate(0, -200px);
+
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+
+    & > p {
+      width: 60%;
+      height: 200px;
+      background-color: rgba(169, 169, 169, 0.53);
+    }
   }
+
   .explain-project-modak {
     position: relative;
+    padding-top: 100px;
 
     margin-top: 300px;
     height: 547px;
-    background-color: #fffff3;
+    background-color: red;
   }
 `;
 
+//276.22pt74.89pt
 export const ProjectModak = (): JSX.Element => {
   return (
     <ProjectModakStyled>
       <div className="explain-project-modak">
-        <p className="temp-modak">Icon</p>
-        <p>title</p>
+        <div className="temp-modak">
+          <p>icon</p>
+        </div>
+        <PageTitle content="Project Modak" />
         <p>{content['project_modack']}</p>
       </div>
     </ProjectModakStyled>
