@@ -1,4 +1,5 @@
 import { ProjectModak } from './section/ProjectModak';
 import { Title } from './section/Title';
+import { WeddingInfo } from './section/WeddingInfo';
 
-export { Title, ProjectModak };
+export { Title, ProjectModak, WeddingInfo };

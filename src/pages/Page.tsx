@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { ProjectModak, Title } from '../component';
+import { ProjectModak, Title, WeddingInfo } from '../component';
 
 //  @media screen and (max-width: 412px) {
 //   }
@@ -24,7 +24,7 @@ const Page = (): JSX.Element => {
       <Title />
       <div className="section">
         <ProjectModak />
-        <ProjectModak />
+        <WeddingInfo />
       </div>
     </PageStyled>
   );
