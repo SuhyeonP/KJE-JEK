@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import reactRefresh from '@vitejs/plugin-react-refresh';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require('path');
@@ -17,7 +16,6 @@ export default defineConfig({
         plugins: ['@emotion/babel-plugin'],
       },
     }),
-    reactRefresh(),
   ],
   resolve: {
     alias: {
