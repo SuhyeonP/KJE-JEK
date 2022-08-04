@@ -10,10 +10,10 @@ const PageStyled = styled.div`
   flex-direction: column;
 
   .section {
-    margin-top: calc(100vh - 116px);
+    margin-top: 50vh;
 
     & > div {
-      min-height: calc(100vh - 56px);
+      min-height: calc(100vh - 30px);
       background-color: cornflowerblue;
     }
   }
