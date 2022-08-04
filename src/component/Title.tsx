@@ -2,14 +2,22 @@ import styled from '@emotion/styled';
 
 const TitleStyled = styled.div`
   position: sticky;
-  padding-top: 45vh;
-  top: -32vh;
+  top: -45vh;
+  height: 100vh;
+
+  display: table;
+  text-align: center;
+
+  .main-logo {
+    display: table-cell;
+    vertical-align: middle;
+  }
 `;
 
 export const Title = (): JSX.Element => {
   return (
     <TitleStyled>
-      <p>icon icon</p>
+      <p className="main-logo">icon icon</p>
     </TitleStyled>
   );
 };
