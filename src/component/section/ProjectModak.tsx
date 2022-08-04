@@ -3,9 +3,10 @@ import { PageTitle } from 'component/common';
 import { colorPalette } from 'color/colorPalette';
 
 const ProjectModakStyled = styled.div`
+  display: inline-block;
   .temp-modak {
-    // fixme modak이 아이콘 위치
     position: absolute;
+    // fixme modak이 아이콘 위치(세로)
     top: -300px;
     // fixme 이건 주언님이 안건들이셔도 돼요 제꺼에요
     //transform: translate(0, -200px);
@@ -26,7 +27,6 @@ const ProjectModakStyled = styled.div`
     position: relative;
 
     margin-top: 300px;
-    height: 547px;
     background-color: ${colorPalette.main_red};
 
     color: white;
