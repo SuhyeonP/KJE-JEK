@@ -10,7 +10,12 @@ const PageStyled = styled.div`
   flex-direction: column;
 
   .section {
-    height: 100vh;
+    margin-top: calc(100vh - 116px);
+
+    & > div {
+      min-height: calc(100vh - 36px);
+      background-color: cornflowerblue;
+    }
   }
 `;
 
@@ -19,13 +24,8 @@ const Page = (): JSX.Element => {
     <PageStyled>
       <Title />
       <div className="section">
-        <p>content</p>
-        <p>content</p>
-        <p>content</p>
-        <p>content</p>
-        <p>content</p>
-        <p>content</p>
-        <p>content</p>
+        <div>content</div>
+        <div>content2</div>
       </div>
     </PageStyled>
   );

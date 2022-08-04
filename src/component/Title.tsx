@@ -2,15 +2,15 @@ import styled from '@emotion/styled';
 
 const TitleStyled = styled.div`
   position: sticky;
-  top: -45vh;
-  height: 100vh;
+  top: -80px;
+  padding-top: 100px;
 
-  display: table;
+  background-color: white;
+
   text-align: center;
 
   .main-logo {
-    display: table-cell;
-    vertical-align: middle;
+    height: 16px;
   }
 `;
 
