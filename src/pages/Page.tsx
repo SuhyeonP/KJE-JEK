@@ -13,7 +13,7 @@ const PageStyled = styled.div`
     margin-top: 50vh;
 
     & > div {
-      min-height: calc(100vh - 30px);
+      min-height: calc(100vh - 48.43px);
       background-color: cornflowerblue;
     }
   }
