@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { colorPalette } from '../../colorPalette';
+import { colorPalette } from 'color/colorPalette';
 
 interface IStyledProps {
   color?: string;

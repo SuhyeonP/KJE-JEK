@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import { MainTitle } from '../common';
-import { colorPalette } from '../../colorPalette';
+import { MainTitle } from 'component/common';
+import { colorPalette } from 'color/colorPalette';
 
 const WeddingInfoStyled = styled.div`
   padding: 79px 30px 0;

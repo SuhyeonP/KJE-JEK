@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
+import { PageTitle } from 'component/common';
 import { content } from '../../content';
-import { PageTitle } from '../common/PageTitle';
 
 const ProjectModakStyled = styled.div`
   display: flex;
