@@ -2,7 +2,22 @@ import styled from '@emotion/styled';
 import { MainTitle } from 'component/common';
 import { colorPalette } from 'color/colorPalette';
 
-const WhoIsModakStyled = styled.div``;
+const WhoIsModakStyled = styled.div`
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+
+  .show-goods {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    color: ${colorPalette.white};
+    background-color: ${colorPalette.main_red};
+
+    padding: 20px 0;
+    text-align: center;
+  }
+`;
 
 export const WhoIsModak = (): JSX.Element => {
   return (
@@ -44,7 +59,7 @@ export const WhoIsModak = (): JSX.Element => {
           </ul>
         </div>
       </div>
-      <button>모다기 굿즈 보러가기</button>
+      <button className="show-goods">모다기 굿즈 보러가기</button>
     </WhoIsModakStyled>
   );
 };
