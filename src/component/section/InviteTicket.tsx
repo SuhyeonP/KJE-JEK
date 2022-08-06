@@ -1,9 +1,8 @@
 import styled from '@emotion/styled';
 import { colorPalette } from 'color/colorPalette';
+import { MainTitle } from 'component/common';
 
 const InviteTicketStyled = styled.div`
-  padding: 36px 31px;
-
   .invite-you {
     background-color: ${colorPalette.sub_red};
     border-radius: 8px;
@@ -33,6 +32,7 @@ const InviteTicketStyled = styled.div`
 export const InviteTicket = (): JSX.Element => {
   return (
     <InviteTicketStyled>
+      <MainTitle color={colorPalette.main_red}>SPECIAL EVENT</MainTitle>
       <div className="invite-you">
         <p>청첩장에 이름을 적어 결혼식날 가져오시면</p>
         <p>추첨을 통해 소소한 선물을 드려요.</p>
