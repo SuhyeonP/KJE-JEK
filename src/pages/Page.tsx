@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import {
-  Comment,
+  WriteComment,
   GuideContent,
   InviteTicket,
   ProjectModak,
@@ -38,7 +38,7 @@ const Page = (): JSX.Element => {
         <InviteTicket />
         <WeddingPicture />
         <WhoIsModak />
-        <Comment />
+        <WriteComment />
       </div>
     </PageStyled>
   );

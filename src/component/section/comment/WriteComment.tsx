@@ -2,18 +2,19 @@ import styled from '@emotion/styled';
 import { MainTitle } from 'component/common';
 import { colorPalette } from 'color/colorPalette';
 import { useForm } from 'react-hook-form';
+import { Comments } from 'component/section/comment/Comments';
 
 const CommentStyled = styled.div`
+  display: block;
+  margin: 0 auto;
+  width: 90%;
   .comment-title {
     text-align: center;
     margin-bottom: 26px;
   }
 
   .comment-form {
-    display: block;
-    margin: 0 auto;
-    width: 90%;
-
+    margin-bottom: 90px;
     .comment-writer,
     .comment-content {
       width: 100%;
@@ -46,7 +47,7 @@ interface IFormProps {
   comment: string;
 }
 
-export const Comment = (): JSX.Element => {
+export const WriteComment = (): JSX.Element => {
   const { register, handleSubmit } = useForm<IFormProps>();
 
   const comment = (data: IFormProps) => {
@@ -70,6 +71,7 @@ export const Comment = (): JSX.Element => {
           댓글 남기기
         </button>
       </form>
+      <Comments />
     </CommentStyled>
   );
 };
