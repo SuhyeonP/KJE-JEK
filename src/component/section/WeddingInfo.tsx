@@ -15,7 +15,24 @@ const WeddingInfoStyled = styled.div`
       padding-top: 25px;
     }
     .special-no-thanks {
+      padding-top: 20px;
       font-size: 13px;
+    }
+  }
+
+  .toggle-wedding-info {
+    width: 100%;
+    color: ${colorPalette.white};
+    background-color: ${colorPalette.main_blue};
+    padding: 19px 0;
+
+    margin-top: 70px;
+
+    button {
+      background-color: inherit;
+      border: 0;
+      outline: 0;
+      color: inherit;
     }
   }
 
@@ -78,7 +95,7 @@ export const WeddingInfo = (): JSX.Element => {
       </div>
       <div className="toggle-wedding-info">
         <button type="button" onClick={() => setIsOpen(prev => !prev)}>
-          찾아오시는 길 자세히 보기 {isOpen ? '^' : 'down'}
+          찾아오시는 길 자세히 보기 {isOpen ? '▼' : '▲'}
         </button>
       </div>
       {isOpen && (

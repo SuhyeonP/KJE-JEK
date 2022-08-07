@@ -22,8 +22,6 @@ export const Comment = ({ emoji, writer, comment, time }: ICommentProps): JSX.El
   const timeFormatter = useMemo(() => {
     const compare = getDateOfGap(new Date(time).getTime(), now.current);
 
-    console.log(compare);
-
     if (compare.gap === 'today') {
       if (compare.minuteGap < 60) {
         return `${compare.minuteGap}분 전`;
