@@ -5,7 +5,7 @@ import { colorPalette } from 'color/colorPalette';
 const WhoIsModakStyled = styled.div`
   display: block;
   width: 90%;
-  margin: 0 auto;
+  margin: 0 auto 320px;
 
   text-align: center;
   padding: 34px 0;

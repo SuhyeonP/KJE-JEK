@@ -62,16 +62,16 @@ const WeddingInfoStyled = styled.div`
     }
 
     .go-map {
-      display: flex;
-      justify-content: center;
-      & > button {
-        background-color: ${colorPalette.main_red};
-        color: white;
-        border: 0;
-        outline: 0;
+      margin-top: 42px;
+      margin-bottom: 133px;
 
-        padding: 21px 19px;
-      }
+      width: 100%;
+      background-color: ${colorPalette.white};
+      color: ${colorPalette.main_red};
+      border: 1px solid ${colorPalette.main_red};
+      outline: 0;
+
+      padding: 21px 19px;
     }
   }
 `;
@@ -115,9 +115,9 @@ export const WeddingInfo = (): JSX.Element => {
               <p className="come-car">자가용으로 오실 때</p>
               <p>식장 앞에서 주차 안내 예정</p>
             </div>
-            <div className="go-map">
-              <button onClick={openMap}>네이버지도 바로가기</button>
-            </div>
+            <button onClick={openMap} className="go-map">
+              네이버지도 바로가기
+            </button>
           </div>
         </>
       )}
