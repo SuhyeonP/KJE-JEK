@@ -3,7 +3,15 @@ import { colorPalette } from 'color/colorPalette';
 import { MainTitle } from 'component/common';
 
 const InviteTicketStyled = styled.div`
+  display: block;
+  width: 90%;
+  margin: 180px auto 170px;
+
+  text-align: center;
+
   .invite-you {
+    margin-top: 21px;
+
     background-color: ${colorPalette.sub_red};
     border-radius: 8px;
 

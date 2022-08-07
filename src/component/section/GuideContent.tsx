@@ -7,6 +7,12 @@ const GuideContentStyled = styled.div`
   color: ${colorPalette.white};
   padding: 30px 0;
 
+  .how-we-met {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+  }
+
   p {
     line-height: 30px;
     letter-spacing: 1px;
@@ -14,11 +20,6 @@ const GuideContentStyled = styled.div`
     font-size: 19px;
 
     padding: 30px 0;
-  }
-  .temp-icon {
-    width: 250px;
-    height: 280px;
-    margin: 84px auto 170px;
   }
 `;
 
@@ -30,11 +31,12 @@ const content2 =
 export const GuideContent = (): JSX.Element => {
   return (
     <GuideContentStyled>
-      <MainTitle color={colorPalette.white}>모시는 글</MainTitle>
-      <p>{content1}</p>
-      <p>{content2}</p>
-      <p>주언, 은경 올림</p>
-      <div className="temp-icon" />
+      <div className="how-we-met">
+        <MainTitle color={colorPalette.white}>모시는 글</MainTitle>
+        <p>{content1}</p>
+        <p>{content2}</p>
+        <p>주언, 은경 올림</p>
+      </div>
     </GuideContentStyled>
   );
 };
