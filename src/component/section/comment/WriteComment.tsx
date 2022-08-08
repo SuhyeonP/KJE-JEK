@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { MainTitle } from 'component/common';
+import { Layout, MainTitle } from 'component/common';
 import { colorPalette } from 'color/colorPalette';
 import { useForm } from 'react-hook-form';
 import { Comments } from 'component/section/comment/Comments';
@@ -40,6 +40,15 @@ const CommentStyled = styled.div`
       float: right;
     }
   }
+
+  .bye {
+    display: flex;
+    justify-content: center;
+
+    .bye-modak {
+      width: 80%;
+    }
+  }
 `;
 
 interface IFormProps {
@@ -55,23 +64,33 @@ export const WriteComment = (): JSX.Element => {
   };
 
   return (
-    <CommentStyled>
-      <div className="comment-title">
-        <MainTitle color={colorPalette.sub_sky_blue}>주언이와 은경이에게 전하는 말</MainTitle>
-      </div>
-      <form className="comment-form" onSubmit={handleSubmit(comment)}>
-        <input className="comment-writer" autoComplete="off" placeholder="이름을 입력해주세요." {...register('name')} />
-        <textarea
-          className="comment-content"
-          autoComplete="off"
-          placeholder="댓글을 남겨주세요."
-          {...register('comment')}
-        />
-        <button className="submit-comment" type="submit">
-          댓글 남기기
-        </button>
-      </form>
-      <Comments />
-    </CommentStyled>
+    <Layout color={colorPalette.white}>
+      <CommentStyled>
+        <div className="comment-title">
+          <MainTitle color={colorPalette.sub_sky_blue}>주언이와 은경이에게 전하는 말</MainTitle>
+        </div>
+        <form className="comment-form" onSubmit={handleSubmit(comment)}>
+          <input
+            className="comment-writer"
+            autoComplete="off"
+            placeholder="이름을 입력해주세요."
+            {...register('name')}
+          />
+          <textarea
+            className="comment-content"
+            autoComplete="off"
+            placeholder="댓글을 남겨주세요."
+            {...register('comment')}
+          />
+          <button className="submit-comment" type="submit">
+            댓글 남기기
+          </button>
+        </form>
+        <Comments />
+        <div className="bye">
+          <img src="assets/images/modaki-03.png" className="bye-modak" />
+        </div>
+      </CommentStyled>
+    </Layout>
   );
 };

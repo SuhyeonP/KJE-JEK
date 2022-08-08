@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { PageTitle } from 'component/common';
+import { Layout, PageTitle } from 'component/common';
 import { colorPalette } from 'color/colorPalette';
 
 const ProjectModakStyled = styled.div`
@@ -51,19 +51,21 @@ const content3 = '2022년 10월 1일, 저희 결혼식으로 이 프로젝트의
 //276.22pt74.89pt
 export const ProjectModak = (): JSX.Element => {
   return (
-    <ProjectModakStyled>
-      <div className="explain-project-modak">
-        <div className="temp-modak">
-          <img src="assets/images/modaki-01.png" />
+    <Layout>
+      <ProjectModakStyled>
+        <div className="explain-project-modak">
+          <div className="temp-modak">
+            <img src="assets/images/modaki-01.png" />
+          </div>
+          <div className="how-we-met">
+            <PageTitle content="Project Modak" />
+            <p>{content1}</p>
+            <p>{content2}</p>
+            <p>{content3}</p>
+          </div>
         </div>
-        <div className="how-we-met">
-          <PageTitle content="Project Modak" />
-          <p>{content1}</p>
-          <p>{content2}</p>
-          <p>{content3}</p>
-        </div>
-      </div>
-    </ProjectModakStyled>
+      </ProjectModakStyled>
+    </Layout>
   );
 };
 
