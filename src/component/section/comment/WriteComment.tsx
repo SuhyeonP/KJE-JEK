@@ -14,7 +14,6 @@ const CommentStyled = styled.div`
   }
 
   .comment-form {
-    margin-bottom: 90px;
     .comment-writer,
     .comment-content {
       width: 100%;

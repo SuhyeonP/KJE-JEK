@@ -7,7 +7,7 @@ import { Button } from 'component/common/Button';
 const CommentsStyled = styled.div`
   position: relative;
 
-  margin: 300px 0 180px;
+  margin: 100px 0 180px;
 `;
 
 const CommentWrapper = styled.div`
@@ -18,26 +18,6 @@ const CommentWrapper = styled.div`
   padding: 30px;
 
   margin-bottom: 30px;
-
-  .modak-header {
-    position: absolute;
-    transform: translate(15%, -103%);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 216px;
-    height: 216px;
-
-    background-color: rgba(48, 168, 253, 0.58);
-
-    & > p {
-      width: 200px;
-      height: 200px;
-      background-color: rgba(255, 150, 150, 0.58);
-    }
-  }
 `;
 
 const commentsDummy = [
@@ -68,6 +48,7 @@ const commentsDummy = [
 ];
 
 export const Comments = (): JSX.Element => {
+  const [total] = useState(10);
   const [count] = useState(50);
   const getMoreComment = () => {
     console.log('get more');
@@ -75,13 +56,9 @@ export const Comments = (): JSX.Element => {
 
   return (
     <CommentsStyled>
-      {commentsDummy.map((comment, idx) => (
+      <p>댓글 {total}</p>
+      {commentsDummy.map(comment => (
         <CommentWrapper key={comment.id}>
-          {idx === 0 && (
-            <div className="modak-header">
-              <p>icon</p>
-            </div>
-          )}
           <Comment emoji={comment.emoji} writer={comment.writer} comment={comment.comment} time={comment.time} />
         </CommentWrapper>
       ))}
