@@ -7,20 +7,17 @@ const TitleStyled = styled.div`
 
   z-index: 100;
 
-  background-color: white;
-
   text-align: center;
 
   .main-logo {
     height: 48.43px;
-    background-color: rgba(255, 242, 229, 0.23);
   }
 `;
 
 export const Title = (): JSX.Element => {
   return (
     <TitleStyled>
-      <p className="main-logo">icon icon</p>
+      <img src="assets/images/logo.png" className="main-logo" />
     </TitleStyled>
   );
 };

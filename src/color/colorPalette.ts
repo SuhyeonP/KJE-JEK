@@ -5,4 +5,5 @@ export const colorPalette = {
   sub_red: '#be191f',
   white: '#fff',
   main_gray: 'rgba(0, 0, 0, 0.4)',
+  main_pink: '#FFEBEF',
 };
