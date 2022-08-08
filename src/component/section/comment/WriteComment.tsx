@@ -10,7 +10,7 @@ const CommentStyled = styled.div`
   width: 90%;
   .comment-title {
     text-align: center;
-    margin-bottom: 26px;
+    padding: 155px 0 25px;
   }
 
   .comment-form {

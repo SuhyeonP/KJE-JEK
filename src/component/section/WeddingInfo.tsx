@@ -38,8 +38,7 @@ const WeddingInfoStyled = styled.div`
 
   .map-img {
     margin: 70px 0;
-    height: 790px;
-    background-color: gray;
+    width: 95%;
   }
 
   .how-to-come {
@@ -101,7 +100,7 @@ export const WeddingInfo = (): JSX.Element => {
         </div>
         {isOpen && (
           <>
-            <div className="map-img" />
+            <img src="assets/images/map.png" className="map-img" />
             <div role="ul" className="how-to-come">
               <div role="li">
                 <p className="come-subway">지하철로 오실 때</p>

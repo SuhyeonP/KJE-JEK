@@ -20,7 +20,7 @@ export const WeddingPicture = (): JSX.Element => {
   return (
     <WeddingPictureStyled>
       <div className="main-title">
-        <MainTitle color={colorPalette.main_blue}>웨딩 사진 보기</MainTitle>
+        <MainTitle color={colorPalette.main_red}>웨딩 사진 보기</MainTitle>
       </div>
       <div className="wedding-picture">wedding picture</div>
     </WeddingPictureStyled>
