@@ -57,7 +57,7 @@ export const WriteComment = (): JSX.Element => {
   return (
     <CommentStyled>
       <div className="comment-title">
-        <MainTitle color={colorPalette.main_blue}>주언이와 은경이에게 전하는 말</MainTitle>
+        <MainTitle color={colorPalette.sub_sky_blue}>주언이와 은경이에게 전하는 말</MainTitle>
       </div>
       <form className="comment-form" onSubmit={handleSubmit(comment)}>
         <input className="comment-writer" autoComplete="off" placeholder="이름을 입력해주세요." {...register('name')} />

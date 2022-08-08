@@ -9,6 +9,7 @@ import {
   WeddingPicture,
   WhoIsModak,
 } from 'component';
+import { colorPalette } from 'color/colorPalette';
 
 //  @media screen and (max-width: 412px) {
 //   }
@@ -17,10 +18,10 @@ const PageStyled = styled.div`
 
   display: flex;
   flex-direction: column;
+  background-color: ${colorPalette.main_pink};
 
   .section {
     margin-top: 50vh;
-
     & > div {
       min-height: calc(100vh - 48.43px);
     }

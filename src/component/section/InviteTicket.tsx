@@ -12,10 +12,11 @@ const InviteTicketStyled = styled.div`
   .invite-you {
     margin-top: 21px;
 
-    background-color: ${colorPalette.sub_red};
+    background-color: ${colorPalette.white};
+    border: 1px solid ${colorPalette.main_red};
     border-radius: 8px;
 
-    color: ${colorPalette.white};
+    color: ${colorPalette.main_red};
 
     padding: 30px 20px;
 
@@ -28,11 +29,8 @@ const InviteTicketStyled = styled.div`
     .ticket-img {
       display: inline-block;
       width: 70%;
-      height: 600px;
 
       margin-top: 60px;
-
-      background-color: rgba(240, 248, 255, 0.47);
     }
   }
 `;
@@ -44,7 +42,7 @@ export const InviteTicket = (): JSX.Element => {
       <div className="invite-you">
         <p>청첩장에 이름을 적어 결혼식날 가져오시면</p>
         <p>추첨을 통해 소소한 선물을 드려요.</p>
-        <div className="ticket-img" />
+        <img className="ticket-img" src="assets/images/invitation.png" />
       </div>
     </InviteTicketStyled>
   );

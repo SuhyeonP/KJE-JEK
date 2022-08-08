@@ -14,7 +14,8 @@ const CommentsStyled = styled.div`
     padding: 20px 0;
     text-align: center;
 
-    background-color: ${colorPalette.sub_blue};
+    border-radius: 8px;
+    background-color: ${colorPalette.sub_sky_blue};
     border: 0;
     outline: 0;
     color: white;
@@ -22,8 +23,9 @@ const CommentsStyled = styled.div`
 `;
 
 const CommentWrapper = styled.div`
-  border: 3px solid ${colorPalette.main_blue};
   border-radius: 8px;
+  background-color: white;
+  box-shadow: 5px 5px #00000024;
 
   padding: 30px;
 

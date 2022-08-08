@@ -4,6 +4,8 @@ import { colorPalette } from 'color/colorPalette';
 
 const ProjectModakStyled = styled.div`
   display: inline-block;
+  background-color: ${colorPalette.main_pink};
+
   .temp-modak {
     position: absolute;
     // fixme modak이 아이콘 위치(세로)
@@ -16,10 +18,8 @@ const ProjectModakStyled = styled.div`
 
     width: 100%;
 
-    & > p {
+    & > img {
       width: 280px;
-      height: 360px;
-      background-color: rgba(169, 169, 169, 0.53);
     }
   }
 
@@ -54,7 +54,7 @@ export const ProjectModak = (): JSX.Element => {
     <ProjectModakStyled>
       <div className="explain-project-modak">
         <div className="temp-modak">
-          <p>icon</p>
+          <img src="assets/images/modaki-01.png" />
         </div>
         <div className="how-we-met">
           <PageTitle content="Project Modak" />
