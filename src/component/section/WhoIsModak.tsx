@@ -19,20 +19,18 @@ const WhoIsModakStyled = styled.div`
   }
 
   .modak-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 30px 0 20px;
+
+    width: 100%;
 
     border: 1px solid ${colorPalette.main_red};
     border-radius: 8px;
     text-align: left;
 
     .modak-simple {
-      .modak-simple-info {
-        position: absolute;
-        bottom: 10px;
-        left: 10px;
-
-        color: ${colorPalette.white};
-      }
       .modak-img {
         height: 300px;
         background-color: ${colorPalette.main_red};
@@ -40,6 +38,7 @@ const WhoIsModakStyled = styled.div`
     }
 
     .modak-introduce {
+      flex: 1;
       background-color: ${colorPalette.white};
       padding: 20px;
       .modak-list {

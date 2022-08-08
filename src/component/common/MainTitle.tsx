@@ -9,7 +9,7 @@ interface IStyledProps {
 export const MainTitle = styled.span<IStyledProps>(
   ({ color = colorPalette.main_red, ls = '1px' }) => `
   color: ${color};
-  font-weight: 800;
+  font-weight: 400;
   font-size: 48px;
   font-family: '116watermelon';
   letter-spacing: ${ls};

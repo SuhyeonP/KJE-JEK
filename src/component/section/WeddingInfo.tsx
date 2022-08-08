@@ -52,11 +52,11 @@ const WeddingInfoStyled = styled.div`
 
       & > p {
         font-weight: 400;
+      }
 
-        &:first-child {
-          padding-bottom: 10px;
-          font-weight: 800;
-        }
+      p[class|='come'] {
+        padding-bottom: 10px;
+        font-weight: 800;
       }
     }
 

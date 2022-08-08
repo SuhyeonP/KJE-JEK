@@ -81,6 +81,7 @@ export const WriteComment = (): JSX.Element => {
             autoComplete="off"
             placeholder="댓글을 남겨주세요."
             {...register('comment')}
+            maxLength={255}
           />
           <button className="submit-comment" type="submit">
             댓글 남기기

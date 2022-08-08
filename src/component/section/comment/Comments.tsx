@@ -13,11 +13,11 @@ const CommentsStyled = styled.div`
 const CommentWrapper = styled.div`
   border-radius: 8px;
   background-color: white;
-  box-shadow: 5px 5px #00000024;
+  box-shadow: 5px 5px 8px #00000024;
 
   padding: 30px;
 
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 
   .modak-header {
     position: absolute;

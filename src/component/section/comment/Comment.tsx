@@ -21,6 +21,11 @@ export const Comment = ({ emoji, writer, comment, time }: ICommentProps): JSX.El
   const now = useRef(Date.now());
   const timeFormatter = useMemo(() => {
     const compare = getDateOfGap(new Date(time).getTime(), now.current);
+    const randomNumber = Math.floor(Math.random() * 10);
+
+    if ([0, 1].indexOf(randomNumber) === 1) {
+      return ['김치전', '파전', '굴전', '호박전', '녹두전', '감자전', '육전'][Math.floor(Math.random() * 7)];
+    }
 
     if (compare.gap === 'today') {
       if (compare.minuteGap < 60) {

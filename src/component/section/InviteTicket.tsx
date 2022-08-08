@@ -31,6 +31,8 @@ const InviteTicketStyled = styled.div`
       width: 70%;
 
       margin-top: 60px;
+
+      box-shadow: 5px 5px 8px #00000024;
     }
   }
 `;
