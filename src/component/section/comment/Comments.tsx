@@ -2,24 +2,12 @@ import styled from '@emotion/styled';
 import { Comment } from 'component/section/comment/Comment';
 import { colorPalette } from 'color/colorPalette';
 import { useState } from 'react';
+import { Button } from 'component/common/Button';
 
 const CommentsStyled = styled.div`
   position: relative;
 
   margin: 300px 0 180px;
-
-  .get-more-comment {
-    width: 100%;
-
-    padding: 20px 0;
-    text-align: center;
-
-    border-radius: 8px;
-    background-color: ${colorPalette.sub_sky_blue};
-    border: 0;
-    outline: 0;
-    color: white;
-  }
 `;
 
 const CommentWrapper = styled.div`
@@ -97,9 +85,9 @@ export const Comments = (): JSX.Element => {
           <Comment emoji={comment.emoji} writer={comment.writer} comment={comment.comment} time={comment.time} />
         </CommentWrapper>
       ))}
-      <button className="get-more-comment" onClick={getMoreComment}>
+      <Button onClick={getMoreComment} backgroundColor={colorPalette.sub_sky_blue}>
         {count}개 댓글 더보기
-      </button>
+      </Button>
     </CommentsStyled>
   );
 };

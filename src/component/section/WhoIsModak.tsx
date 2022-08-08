@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { MainTitle } from 'component/common';
 import { colorPalette } from 'color/colorPalette';
+import { Button } from 'component/common/Button';
 
 const WhoIsModakStyled = styled.div`
   display: block;
@@ -10,17 +11,21 @@ const WhoIsModakStyled = styled.div`
   text-align: center;
   padding: 34px 0;
 
-  .modak-profile {
-    height: 600px;
-    margin: 70px 0 20px;
+  .modak-history {
+    padding-top: 35px;
+    color: ${colorPalette.main_red};
+    font-size: 15px;
+    line-height: 24px;
+  }
 
-    border: 2px solid ${colorPalette.main_red};
+  .modak-profile {
+    margin: 30px 0 20px;
+
+    border: 1px solid ${colorPalette.main_red};
     border-radius: 8px;
     text-align: left;
 
     .modak-simple {
-      position: relative;
-
       .modak-simple-info {
         position: absolute;
         bottom: 10px;
@@ -33,17 +38,28 @@ const WhoIsModakStyled = styled.div`
         background-color: ${colorPalette.main_red};
       }
     }
-  }
 
-  .show-goods {
-    width: 100%;
-    border: 0;
-    outline: 0;
-    color: ${colorPalette.white};
-    background-color: ${colorPalette.main_red};
+    .modak-introduce {
+      background-color: ${colorPalette.white};
+      padding: 20px;
+      .modak-list {
+        display: flex;
+        align-items: start;
 
-    padding: 20px 0;
-    text-align: center;
+        padding: 10px 0;
+
+        & > p {
+          &:first-child {
+            width: 70px;
+            max-width: 70px;
+            padding-right: 10px;
+          }
+          &:last-child {
+            width: calc(100% - 80px);
+          }
+        }
+      }
+    }
   }
 `;
 
@@ -51,32 +67,34 @@ export const WhoIsModak = (): JSX.Element => {
   return (
     <WhoIsModakStyled>
       <MainTitle color={colorPalette.main_red}>모다기 소개서</MainTitle>
-      <p>모다기는 모닥불에서 영감을 받아 탄생한 캐릭터입니다.</p>
-      <p>프로필에서부터 과거 사진들까지</p>
-      <p>모다기에 대해 소개해드릴게요!</p>
+      <div className="modak-history">
+        <p>모다기는 모닥불에서 영감을 받아 탄생한 캐릭터입니다.</p>
+        <p>프로필에서부터 과거 사진들까지</p>
+        <p>모다기에 대해 소개해드릴게요!</p>
+      </div>
       <div className="modak-profile">
         <div className="modak-simple">
           <p className="modak-img">img</p>
-          <div className="modak-simple-info">
-            <p>모다기</p>
-            <p>5세, 경기도</p>
-          </div>
         </div>
         <div className="modak-introduce">
           <div role="ul">
-            <div role="li">
+            <div role="li" className="modak-list">
+              <p>이름</p>
+              <p>모닥이</p>
+            </div>
+            <div role="li" className="modak-list">
               <p>생년월일</p>
               <p>17.09.02</p>
             </div>
-            <div role="li">
+            <div role="li" className="modak-list">
               <p>별자리</p>
               <p>처녀자리</p>
             </div>
-            <div role="li">
+            <div role="li" className="modak-list">
               <p>특기</p>
               <p>솔직한 대화 이끌어내기</p>
             </div>
-            <div role="li">
+            <div role="li" className="modak-list">
               <p>자기소개</p>
               <p>
                 처음엔 수줍음이 많지만 사실 내면은 활활타는 열정으로 가득차 있습니다. 알고보면 섬세한 감정과 순수한
@@ -86,7 +104,7 @@ export const WhoIsModak = (): JSX.Element => {
           </div>
         </div>
       </div>
-      <button className="show-goods">모다기 굿즈 보러가기</button>
+      <Button backgroundColor={colorPalette.main_red}>모다기 굿즈 보러가기</Button>
     </WhoIsModakStyled>
   );
 };
