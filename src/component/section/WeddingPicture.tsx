@@ -2,9 +2,7 @@ import styled from '@emotion/styled';
 import { MainTitle } from 'component/common';
 import { colorPalette } from 'color/colorPalette';
 
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import Slider from 'react-slick';
+import { useState } from 'react';
 
 const imgs = [
   '4545-1',
@@ -39,48 +37,10 @@ const WeddingPictureStyled = styled.div`
       width: 100%;
     }
   }
-
-  .slick-list {
-    overflow-x: hidden;
-
-    .slick-track {
-      overflow-x: hidden;
-    }
-  }
-
-  .slick-slide {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .slick-dots {
-    width: 90%;
-    & > li {
-      width: 15px;
-      height: 15px;
-
-      & > button {
-        width: 15px;
-        height: 15px;
-
-        padding: 0;
-      }
-      :before {
-        width: 15px;
-        height: 15px;
-      }
-    }
-  }
 `;
 
 export const WeddingPicture = (): JSX.Element => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    arrows: false,
-  };
+  const [selected, setSelected] = useState(0);
 
   return (
     <WeddingPictureStyled>
@@ -88,11 +48,9 @@ export const WeddingPicture = (): JSX.Element => {
         <MainTitle color={colorPalette.main_red}>웨딩 사진 보기</MainTitle>
       </div>
       <div className="wedding-picture">
-        {imgs.map(ele => (
-          <div className="wedding-img-slider" key={ele}>
-            <img src={`assets/images/wedding/4V4A${ele}.jpg`} />
-          </div>
-        ))}
+        <div className="wedding-img-slider">
+          <img src={`assets/images/wedding/4V4A${imgs[selected]}.jpg`} />
+        </div>
       </div>
     </WeddingPictureStyled>
   );
