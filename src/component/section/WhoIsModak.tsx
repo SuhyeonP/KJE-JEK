@@ -25,7 +25,6 @@ const WhoIsModakStyled = styled.div`
     align-items: center;
     margin: 30px 0 20px;
     padding: 2px;
-    background-color: ${colorPalette.white};
 
     width: 100%;
 
@@ -35,6 +34,7 @@ const WhoIsModakStyled = styled.div`
 
     .modak-simple {
       width: 100%;
+      padding: 10px;
       background-color: ${colorPalette.main_pink};
       .modak-img {
         display: block;
