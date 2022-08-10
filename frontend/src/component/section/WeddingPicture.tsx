@@ -1,28 +1,90 @@
 import styled from '@emotion/styled';
 import { MainTitle } from 'component/common';
 import { colorPalette } from 'color/colorPalette';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Slider from 'react-slick';
+
+const imgs = [
+  '4545-1',
+  '4561',
+  '4673',
+  '4812',
+  '4859',
+  '4867',
+  '4896',
+  '5028-1',
+  '5139',
+  '5265',
+  '5297',
+  '5331',
+  '5371',
+];
 
 const WeddingPictureStyled = styled.div`
+  @media screen and(max-width: 429px) {
+    .slider-wrapper {
+      width: 100%;
+    }
+  }
+  @media screen and (min-width: 430px) {
+    .slider-wrapper {
+      display: block;
+      width: 60%;
+      margin: 0 auto;
+    }
+  }
+
   margin-bottom: 200px;
+
   .main-title {
     padding-bottom: 36px;
     text-align: center;
   }
+  .slick-track {
+    display: flex;
+    align-items: center;
+  }
 
-  .wedding-picture {
-    width: 100%;
-    height: 926px;
-    background-color: gray;
+  .slick-dots {
+    & > li {
+      width: 15px;
+      height: 15px;
+      & > button {
+        padding: 0;
+        width: 15px;
+        height: 15px;
+      }
+    }
   }
 `;
 
 export const WeddingPicture = (): JSX.Element => {
+  const settings = {
+    dots: true,
+    speed: 500,
+    infinite: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    className: 'slider-wrapper',
+    // adaptiveHeight: true,
+  };
   return (
     <WeddingPictureStyled>
       <div className="main-title">
         <MainTitle color={colorPalette.main_red}>웨딩 사진 보기</MainTitle>
       </div>
-      <div className="wedding-picture">wedding picture</div>
+      <Slider {...settings}>
+        {imgs.map(ele => (
+          <img src={`assets/images/wedding/4V4A${ele}.jpg`} key={ele} className="slide-img" />
+        ))}
+      </Slider>
     </WeddingPictureStyled>
   );
 };
+//
+// <div className="wedding-img-slider">
+//   <img src={`assets/images/wedding/4V4A${imgs[selected]}.jpg`} />
+// </div>
+// <div>

@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { MainTitle } from 'component/common';
 import { colorPalette } from 'color/colorPalette';
 import { Button } from 'component/common/Button';
+import Slider from 'react-slick';
 
 const WhoIsModakStyled = styled.div`
   display: block;
@@ -23,6 +24,8 @@ const WhoIsModakStyled = styled.div`
     flex-direction: column;
     align-items: center;
     margin: 30px 0 20px;
+    padding: 2px;
+    background-color: ${colorPalette.white};
 
     width: 100%;
 
@@ -31,14 +34,20 @@ const WhoIsModakStyled = styled.div`
     text-align: left;
 
     .modak-simple {
+      width: 100%;
+      background-color: ${colorPalette.main_pink};
       .modak-img {
-        height: 300px;
-        background-color: ${colorPalette.main_red};
+        display: block;
+        margin: 0 auto;
+        width: 90%;
+      }
+      .slick-dots {
+        top: 0;
+        height: 20px;
       }
     }
 
     .modak-introduce {
-      flex: 1;
       background-color: ${colorPalette.white};
       padding: 20px;
       .modak-list {
@@ -61,8 +70,20 @@ const WhoIsModakStyled = styled.div`
     }
   }
 `;
+const modaks = Array.from({ length: 9 }, (_, idx) => idx + 1);
 
 export const WhoIsModak = (): JSX.Element => {
+  const settings = {
+    dots: true,
+    speed: 500,
+    infinite: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    className: 'modak-img',
+    // adaptiveHeight: true,
+  };
+
   return (
     <WhoIsModakStyled>
       <MainTitle color={colorPalette.main_red}>모다기 소개서</MainTitle>
@@ -73,7 +94,12 @@ export const WhoIsModak = (): JSX.Element => {
       </div>
       <div className="modak-profile">
         <div className="modak-simple">
-          <p className="modak-img">img</p>
+          {/*<p className="modak-img">img</p>*/}
+          <Slider {...settings}>
+            {modaks.map(ele => (
+              <img src={`assets/images/modak/modaki-profile-0${ele}.png`} key={ele} />
+            ))}
+          </Slider>
         </div>
         <div className="modak-introduce">
           <div role="ul">

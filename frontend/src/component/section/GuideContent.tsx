@@ -1,10 +1,24 @@
 import styled from '@emotion/styled';
 import { colorPalette } from 'color/colorPalette';
-import { MainTitle } from 'component/common';
+import { Layout, MainTitle } from 'component/common';
 
 const GuideContentStyled = styled.div`
-  background-color: ${colorPalette.main_red};
-  color: ${colorPalette.white};
+  @media screen and (min-width: 430px) {
+    text-align: center;
+    .modak-img > img {
+      width: 50%;
+    }
+  }
+
+  @media screen and (max-width: 429px) {
+    .modak-img {
+      & > img {
+        width: 80%;
+      }
+    }
+  }
+
+  color: ${colorPalette.main_red};
   padding: 30px 0;
 
   .how-we-met {
@@ -21,6 +35,10 @@ const GuideContentStyled = styled.div`
 
     padding: 30px 0;
   }
+
+  .modak-img {
+    text-align: center;
+  }
 `;
 
 const content1 =
@@ -30,14 +48,19 @@ const content2 =
 
 export const GuideContent = (): JSX.Element => {
   return (
-    <GuideContentStyled>
-      <div className="how-we-met">
-        <MainTitle color={colorPalette.white}>모시는 글</MainTitle>
-        <p>{content1}</p>
-        <p>{content2}</p>
-        <p>주언, 은경 올림</p>
-      </div>
-    </GuideContentStyled>
+    <Layout>
+      <GuideContentStyled>
+        <div className="how-we-met">
+          <MainTitle color={colorPalette.main_red}>모시는 글</MainTitle>
+          <p>{content1}</p>
+          <p>{content2}</p>
+          <p>주언, 은경 올림</p>
+          <div className="modak-img">
+            <img src="assets/images/modaki-02.png" />
+          </div>
+        </div>
+      </GuideContentStyled>
+    </Layout>
   );
 };
 
