@@ -3,6 +3,8 @@ import { Layout, MainTitle } from 'component/common';
 import { colorPalette } from 'color/colorPalette';
 import { useState } from 'react';
 import { Button } from 'component/common/Button';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const WeddingInfoStyled = styled.div`
   padding: 79px 0 0;
