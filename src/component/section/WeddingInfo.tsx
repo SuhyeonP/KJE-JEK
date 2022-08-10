@@ -2,10 +2,11 @@ import styled from '@emotion/styled';
 import { Layout, MainTitle } from 'component/common';
 import { colorPalette } from 'color/colorPalette';
 import { useState } from 'react';
+import { Button } from 'component/common/Button';
 
 const WeddingInfoStyled = styled.div`
   padding: 79px 0 0;
-
+  width: 100%;
   text-align: center;
 
   .wedding-info {
@@ -27,18 +28,11 @@ const WeddingInfoStyled = styled.div`
     padding: 19px 0;
 
     margin-top: 70px;
-
-    button {
-      background-color: inherit;
-      border: 0;
-      outline: 0;
-      color: inherit;
-    }
   }
 
   .map-img {
     margin: 70px 0;
-    width: 95%;
+    width: 90%;
   }
 
   .how-to-come {
@@ -60,17 +54,8 @@ const WeddingInfoStyled = styled.div`
       }
     }
 
-    .go-map {
-      margin-top: 42px;
-      margin-bottom: 133px;
-
-      width: 100%;
-      background-color: ${colorPalette.white};
-      color: ${colorPalette.main_red};
-      border: 1px solid ${colorPalette.main_red};
-      outline: 0;
-
-      padding: 21px 19px;
+    & > button {
+      margin: 40px 0 100px;
     }
   }
 `;
@@ -115,9 +100,9 @@ export const WeddingInfo = (): JSX.Element => {
                 <p className="come-car">자가용으로 오실 때</p>
                 <p>식장 앞에서 주차 안내 예정</p>
               </div>
-              <button onClick={openMap} className="go-map">
+              <Button onClick={openMap} backgroundColor={colorPalette.sub_sky_blue}>
                 네이버지도 바로가기
-              </button>
+              </Button>
             </div>
           </>
         )}
