@@ -1,8 +1,9 @@
 import styled from '@emotion/styled';
 import { MainTitle } from 'component/common';
 import { colorPalette } from 'color/colorPalette';
-
-import { useState } from 'react';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Slider from 'react-slick';
 
 const imgs = [
   '4545-1',
@@ -21,37 +22,69 @@ const imgs = [
 ];
 
 const WeddingPictureStyled = styled.div`
+  @media screen and(max-width: 429px) {
+    .slider-wrapper {
+      width: 100%;
+    }
+  }
+  @media screen and (min-width: 430px) {
+    .slider-wrapper {
+      display: block;
+      width: 60%;
+      margin: 0 auto;
+    }
+  }
+
   margin-bottom: 200px;
+
   .main-title {
     padding-bottom: 36px;
     text-align: center;
   }
-
-  .wedding-picture {
-    width: 100%;
-    background-color: ${colorPalette.main_pink};
+  .slick-track {
+    display: flex;
+    align-items: center;
   }
 
-  .wedding-img-slider {
-    & > img {
-      width: 100%;
+  .slick-dots {
+    & > li {
+      width: 15px;
+      height: 15px;
+      & > button {
+        padding: 0;
+        width: 15px;
+        height: 15px;
+      }
     }
   }
 `;
 
 export const WeddingPicture = (): JSX.Element => {
-  const [selected, setSelected] = useState(0);
-
+  const settings = {
+    dots: true,
+    speed: 500,
+    infinite: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    className: 'slider-wrapper',
+    // adaptiveHeight: true,
+  };
   return (
     <WeddingPictureStyled>
       <div className="main-title">
         <MainTitle color={colorPalette.main_red}>웨딩 사진 보기</MainTitle>
       </div>
-      <div className="wedding-picture">
-        <div className="wedding-img-slider">
-          <img src={`assets/images/wedding/4V4A${imgs[selected]}.jpg`} />
-        </div>
-      </div>
+      <Slider {...settings}>
+        {imgs.map(ele => (
+          <img src={`assets/images/wedding/4V4A${ele}.jpg`} key={ele} className="slide-img" />
+        ))}
+      </Slider>
     </WeddingPictureStyled>
   );
 };
+//
+// <div className="wedding-img-slider">
+//   <img src={`assets/images/wedding/4V4A${imgs[selected]}.jpg`} />
+// </div>
+// <div>
