@@ -8,7 +8,9 @@ interface IStyledProps {
 
 const LayoutStyled = styled.div<IStyledProps>(
   ({ color }) => `
+  display: flex;
   background-color: ${color};
+  justify-content: center;
 `
 );
 

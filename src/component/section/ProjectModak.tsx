@@ -3,8 +3,8 @@ import { Layout, PageTitle } from 'component/common';
 import { colorPalette } from 'color/colorPalette';
 
 const ProjectModakStyled = styled.div`
-  display: inline-block;
   background-color: ${colorPalette.main_pink};
+  width: 100%;
 
   .temp-modak {
     position: absolute;
