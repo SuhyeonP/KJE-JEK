@@ -24,6 +24,8 @@ const WhoIsModakStyled = styled.div`
     flex-direction: column;
     align-items: center;
     margin: 30px 0 20px;
+    padding: 2px;
+    background-color: ${colorPalette.white};
 
     width: 100%;
 
@@ -33,6 +35,7 @@ const WhoIsModakStyled = styled.div`
 
     .modak-simple {
       width: 100%;
+      background-color: ${colorPalette.main_pink};
       .modak-img {
         display: block;
         margin: 0 auto;
@@ -45,7 +48,6 @@ const WhoIsModakStyled = styled.div`
     }
 
     .modak-introduce {
-      flex: 1;
       background-color: ${colorPalette.white};
       padding: 20px;
       .modak-list {
