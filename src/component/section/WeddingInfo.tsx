@@ -28,6 +28,13 @@ const WeddingInfoStyled = styled.div`
     padding: 19px 0;
 
     margin-top: 70px;
+
+    button {
+      background-color: inherit;
+      border: 0;
+      outline: 0;
+      color: inherit;
+    }
   }
 
   .map-img {
