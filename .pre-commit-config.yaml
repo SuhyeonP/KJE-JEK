@@ -1,0 +1,42 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+fail_fast: false
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.5.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: |
+          (?x)(
+              ^frontend/|
+              ^backend/src/runway/asyncapi/|
+              ^backend/src/runway/store/db_migrations
+          )
+      - id: end-of-file-fixer
+        exclude: |
+          (?x)(
+              ^frontend/|
+              ^backend/src/runway/common/env/|
+              ^backend/src/runway/asyncapi/|
+              ^helm\/.+\/secret.yaml|
+              ^sdk/src/runway/common/env/|
+              ^backend/src/runway/store/db_migrations
+          )
+      - id: mixed-line-ending
+        exclude: |
+          (?x)(
+              ^frontend/|
+              ^helm\/.+\/secret.yaml
+          )
+      - id: check-added-large-files
+        args: ["--maxkb=10000"]
+
+  - repo: https://github.com/asottile/add-trailing-comma
+    rev: v2.0.1
+    hooks:
+      - id: add-trailing-comma
+        exclude: |
+          (?x)(
+              ^frontend/|
+              ^backend/src/runway/store/db_migrations
+          )
