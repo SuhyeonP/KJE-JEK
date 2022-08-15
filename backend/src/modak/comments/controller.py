@@ -1,10 +1,14 @@
-
 from fastapi import APIRouter, Depends
 
-from modak.common.logger import module_logger
-
+from modak.comments.schema import (
+    CommentCreateIn,
+    CommentCreateOut,
+    CommentDeleteOut,
+    CommentListIn,
+    CommentListOut,
+)
 from modak.comments.service import CommentService
-from modak.comments.schema import CommentCreateIn, CommentCreateOut, CommentDeleteOut, CommentListIn, CommentListOut
+from modak.common.logger import module_logger
 
 router = APIRouter(prefix="/comments", tags=["comments"])
 

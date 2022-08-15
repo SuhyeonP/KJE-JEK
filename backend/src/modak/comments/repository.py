@@ -1,12 +1,13 @@
 from contextlib import AbstractContextManager
 from typing import Callable
-from .enums import CommentOrderByColumn
 
 from sqlalchemy.orm import Session
 
+from modak.comments.model import Comment
 from modak.common.logger import LoggingMixin
 from modak.database.database import Database
-from modak.comments.model import Comment
+
+from .enums import CommentOrderByColumn
 
 
 class CommentDB(LoggingMixin):

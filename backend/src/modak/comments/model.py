@@ -1,11 +1,6 @@
 from datetime import datetime
 
-from sqlalchemy import (
-    Column,
-    DateTime,
-    Integer,
-    String,
-)
+from sqlalchemy import Column, DateTime, Integer, String
 
 from modak.database.base import Base
 

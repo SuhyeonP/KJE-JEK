@@ -1,4 +1,3 @@
-
 import sys
 from typing import Final
 
@@ -7,15 +6,13 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
-from modak.common.logger import module_logger
-from modak.database.database import Database
 from modak.comments import controller as comments_controller
-
 from modak.common.custom_exception_handlers import (
     http_exception_handler,
     validation_exception_handler,
 )
-
+from modak.common.logger import module_logger
+from modak.database.database import Database
 
 logger = module_logger(__name__)
 

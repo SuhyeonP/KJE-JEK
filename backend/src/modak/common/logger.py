@@ -57,7 +57,7 @@ class AppRootLoggingMeta(type):
 
         cls._validate_app_root_logger(cls.app_root_logger)
         cls._override_app_root_logger_level_from_env()
-    
+
     def _validate_file_handler_log_dir(cls) -> None:
         """Validate the file handler log dir."""
         if not cls.FILE_HANDLER_LOG_DIR.exists():

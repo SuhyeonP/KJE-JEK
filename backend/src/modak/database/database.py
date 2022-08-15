@@ -15,25 +15,19 @@
 #  strictly forbidden unless prior written permission is obtained
 #  from MakinaRocks Co., Ltd.
 #
-from contextlib import (
-    AbstractContextManager,
-    contextmanager,
-)
+from contextlib import AbstractContextManager, contextmanager
 from time import time
 from typing import Callable
 
 from sqlalchemy import create_engine, orm
 from sqlalchemy.orm import Session
 
-from modak.database.base import Base
-from modak.database.models import *  # noqa: F401,F403
 from modak.common.logger import LoggingMixin
 from modak.common.settings import settings
 from modak.common.singleton import singleton
-from modak.database.utils import (
-    DBExceptionHandler,
-)
-
+from modak.database.base import Base
+from modak.database.models import *  # noqa: F401,F403
+from modak.database.utils import DBExceptionHandler
 
 
 @singleton

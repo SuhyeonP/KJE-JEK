@@ -1,15 +1,9 @@
-
+from modak.comments.enums import CommentOrderByColumn
+from modak.comments.model import Comment
+from modak.comments.repository import CommentDB
+from modak.comments.schema import CommentCreateIn, CommentData, CommentDataList
 from modak.common.logger import LoggingMixin
 from modak.common.utils import Emoji, random_emoji
-
-from modak.comments.model import Comment
-from modak.comments.enums import CommentOrderByColumn
-from modak.comments.repository import CommentDB
-from modak.comments.schema import (
-    CommentCreateIn,
-    CommentData,
-    CommentDataList,
-)
 
 
 class CommentService(LoggingMixin):
