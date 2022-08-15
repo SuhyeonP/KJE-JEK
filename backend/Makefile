@@ -2,12 +2,17 @@
 # Set up project #
 ##################
 install-poetry:
-	@echo "Install poetry";\
-	if [ `command -v brew` ];\
-		then brew install poetry;\
+	if [ `which poetry` ]; then\
+		echo "Poetry already installed.";\
+	elif [ `command -v brew` ]; then\
+		brew install poetry;\
 	else\
 		curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python - ;\
 	fi;\
+
+init: install-poetry
+	@echo "Initialize project";\
+	poetry install
 
 format:
 	poetry run black . 
