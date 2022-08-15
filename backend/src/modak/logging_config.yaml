@@ -1,0 +1,54 @@
+version: 1
+disable_existing_loggers: false
+formatters:
+  simple:
+    format: "[{asctime}.{msecs:03.0f}] {levelname:>8}: {filename}:{lineno} {funcName}() - {message}"
+    datefmt: '%H:%M:%S'
+    style: '{'
+  detailed:
+    format: "[{asctime}.{msecs:03.0f}] {levelname:>8}:{name:<10} {filename}:{lineno} {funcName}() - {message}"
+    datefmt: '%Y-%m-%d %H:%M:%S'
+    style: '{'
+handlers:
+  console:
+    class: logging.StreamHandler
+    formatter: simple
+    stream: ext://sys.stdout
+    level: DEBUG
+  file:
+    class: logging.handlers.RotatingFileHandler
+    formatter: detailed
+    filename: ./modak.log
+    # filename is overridden by the AppRootLogging class to use absolute path.
+    # filename in config file: ./modak.log
+    # filename (development): project_root/backend/src/modak/logs/modak.log
+    # filename (production): /var/log/modak.log
+    maxBytes: 10485760
+    backupCount: 5
+    level: INFO
+    encoding: utf-8
+    delay: false
+  file-debug:
+    class: logging.handlers.RotatingFileHandler
+    formatter: detailed
+    filename: ./modak-debug.log
+    maxBytes: 10485760
+    backupCount: 5
+    level: DEBUG
+    encoding: utf-8
+    delay: false
+  file-error:
+    class: logging.handlers.RotatingFileHandler
+    formatter: detailed
+    filename: ./modak-error.log
+    maxBytes: 10485760
+    backupCount: 5
+    level: ERROR
+    encoding: utf-8
+    delay: false
+loggers:
+  modak:
+    handlers: [console, file, file-debug, file-error]
+    level: DEBUG
+    propagate: false
+    qualname: modak
