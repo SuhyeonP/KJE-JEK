@@ -3,7 +3,7 @@ import { Comment } from 'component/section/comment/Comment';
 import { colorPalette } from 'color/colorPalette';
 import { useState } from 'react';
 import { Button } from 'component/common/Button';
-import { useQuery } from '@tanstack/react-query';
+import { useInfiniteQuery } from '@tanstack/react-query';
 import { nanoid } from 'nanoid';
 
 const CommentsStyled = styled.div`
@@ -24,43 +24,45 @@ interface IComment {
   created_at: string;
 }
 
-const getComment = (page: number) => {
-  return fetch(`http://localhost:8080/v1/comments?page=${page}&page_size=3`).then(res => res.json());
+interface IHandleData {
+  data: IComment[];
+  page: number;
+  isLast: boolean;
+}
+
+const getComment = async (page: number) => {
+  const data = await fetch(`http://localhost:8080/v1/comments?page=${page}&page_size=3`).then(res => res.json());
+  return { data: data.comments, page: page + 1, isLast: false };
 };
 
 export const Comments = (): JSX.Element => {
   const [total] = useState(10);
-  const [page, setPage] = useState(1);
-  const [comments, setComments] = useState<IComment[]>([]);
 
-  const getMoreComment = () => {
-    setPage(prev => prev + 1);
-  };
-
-  const { data } = useQuery<any, any, Record<'comments', IComment[]>>(
-    ['get-comments', page],
-    async () => await getComment(page),
+  const { data, fetchNextPage } = useInfiniteQuery<any, any, IHandleData>(
+    ['get-comments'],
+    ({ pageParam = 1 }) => getComment(pageParam),
     {
-      onSuccess: data => {
-        setComments(prev => {
-          return prev.concat(data.comments);
-        });
-      },
+      getNextPageParam: lastPage => (!lastPage.isLast ? lastPage.page : undefined),
     }
   );
+  const getMoreComment = () => {
+    fetchNextPage();
+  };
 
   return (
     <CommentsStyled>
       <p className="comment-count">댓글 {total}</p>
-      {data?.comments.map(comment => (
-        <Comment
-          key={nanoid()}
-          emoji={comment.emoji}
-          writer={comment.author}
-          comment={comment.content}
-          time={comment.created_at}
-        />
-      ))}
+      {data?.pages.map(page =>
+        page.data.map(comment => (
+          <Comment
+            key={nanoid()}
+            emoji={comment.emoji}
+            writer={comment.author}
+            comment={comment.content}
+            time={comment.created_at}
+          />
+        ))
+      )}
       <Button onClick={getMoreComment} backgroundColor={colorPalette.sub_sky_blue}>
         댓글 더 보기
       </Button>
