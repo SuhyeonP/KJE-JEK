@@ -37,18 +37,22 @@ export const Comments = (): JSX.Element => {
     setPage(prev => prev + 1);
   };
 
-  useQuery<any, any, Record<'comments', IComment[]>>(['get-comments', page], async () => await getComment(page), {
-    onSuccess: data => {
-      setComments(prev => {
-        return prev.concat(data.comments);
-      });
-    },
-  });
+  const { data } = useQuery<any, any, Record<'comments', IComment[]>>(
+    ['get-comments', page],
+    async () => await getComment(page),
+    {
+      onSuccess: data => {
+        setComments(prev => {
+          return prev.concat(data.comments);
+        });
+      },
+    }
+  );
 
   return (
     <CommentsStyled>
       <p className="comment-count">댓글 {total}</p>
-      {comments.map(comment => (
+      {data?.comments.map(comment => (
         <Comment
           key={nanoid()}
           emoji={comment.emoji}
