@@ -9,16 +9,10 @@ const CommentsStyled = styled.div`
   position: relative;
 
   margin: 100px 0 180px;
-`;
 
-const CommentWrapper = styled.div`
-  border-radius: 8px;
-  background-color: white;
-  box-shadow: 5px 5px 8px #00000024;
-
-  padding: 30px;
-
-  margin-bottom: 30px;
+  .comment-count {
+    padding-bottom: 18px;
+  }
 `;
 
 interface IComment {
@@ -54,7 +48,7 @@ export const Comments = (): JSX.Element => {
 
   return (
     <CommentsStyled>
-      <p>댓글 {total}</p>
+      <p className="comment-count">댓글 {total}</p>
       {data?.comments.map(comment => (
         <Comment
           key={comment.id}
