@@ -68,12 +68,14 @@ const postComment = (request: IPostComment) => {
 };
 
 export const WriteComment = (): JSX.Element => {
-  const { register, handleSubmit } = useForm<IPostComment>();
+  const { register, handleSubmit, setValue } = useForm<IPostComment>();
   const queryClient = useQueryClient();
 
   const commentMutation = useMutation<any, any, IPostComment>(postComment, {
     onSuccess: () => {
       queryClient.invalidateQueries(['get-comments']);
+      setValue('author', '');
+      setValue('content', '');
     },
   });
 
