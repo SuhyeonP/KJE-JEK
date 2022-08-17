@@ -7,4 +7,6 @@ export const colorPalette = {
   white: '#fff',
   main_gray: 'rgba(0, 0, 0, 0.4)',
   main_pink: '#FFEBEF',
+  shadow_color: '#00000024',
+  time_color: '#00000080',
 };
