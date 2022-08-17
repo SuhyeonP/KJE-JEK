@@ -3,6 +3,7 @@ import { Layout, MainTitle } from 'component/common';
 import { colorPalette } from 'color/colorPalette';
 import { useForm } from 'react-hook-form';
 import { Comments } from 'component/section/comment/Comments';
+import { useMutation } from '@tanstack/react-query';
 
 const CommentStyled = styled.div`
   display: block;
@@ -50,16 +51,30 @@ const CommentStyled = styled.div`
   }
 `;
 
-interface IFormProps {
-  name: string;
-  comment: string;
+interface IPostComment {
+  author: string;
+  content: string;
 }
 
-export const WriteComment = (): JSX.Element => {
-  const { register, handleSubmit } = useForm<IFormProps>();
+const postComment = (request: IPostComment) => {
+  console.log(request);
+  return fetch('http://localhost:8080/v1/comments', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: JSON.stringify(request),
+  }).then(res => res.json());
+};
 
-  const comment = (data: IFormProps) => {
-    console.log(data);
+export const WriteComment = (): JSX.Element => {
+  const { register, handleSubmit } = useForm<IPostComment>();
+
+  const commentMutation = useMutation<any, any, IPostComment>(postComment);
+
+  const comment = (data: IPostComment) => {
+    commentMutation.mutate(data);
   };
 
   return (
@@ -73,13 +88,13 @@ export const WriteComment = (): JSX.Element => {
             className="comment-writer"
             autoComplete="off"
             placeholder="이름을 입력해주세요."
-            {...register('name')}
+            {...register('author')}
           />
           <textarea
             className="comment-content"
             autoComplete="off"
             placeholder="댓글을 남겨주세요."
-            {...register('comment')}
+            {...register('content')}
             maxLength={255}
           />
           <button className="submit-comment" type="submit">
