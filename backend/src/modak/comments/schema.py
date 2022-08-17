@@ -26,10 +26,10 @@ class CommentCreateIn(BaseModel):
 class CommentListIn(BaseModel):
     """Comment list input model."""
 
-    page: int = (1,)
-    page_size: int = (10,)
-    order_by: str = (CommentOrderByColumn.created_at,)
-    asc: bool = (False,)
+    page: int = 1
+    page_size: int = 10
+    order_by: str = CommentOrderByColumn.created_at
+    asc: bool = False
 
 
 class CommentData(BaseModelORMTrue):
