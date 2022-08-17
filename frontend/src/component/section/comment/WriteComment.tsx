@@ -3,7 +3,7 @@ import { Layout, MainTitle } from 'component/common';
 import { colorPalette } from 'color/colorPalette';
 import { useForm } from 'react-hook-form';
 import { Comments } from 'component/section/comment/Comments';
-import { useMutation } from '@tanstack/react-query';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 
 const CommentStyled = styled.div`
   display: block;
@@ -57,7 +57,6 @@ interface IPostComment {
 }
 
 const postComment = (request: IPostComment) => {
-  console.log(request);
   return fetch('http://localhost:8080/v1/comments', {
     method: 'POST',
     headers: {
@@ -70,8 +69,13 @@ const postComment = (request: IPostComment) => {
 
 export const WriteComment = (): JSX.Element => {
   const { register, handleSubmit } = useForm<IPostComment>();
+  const queryClient = useQueryClient();
 
-  const commentMutation = useMutation<any, any, IPostComment>(postComment);
+  const commentMutation = useMutation<any, any, IPostComment>(postComment, {
+    onSuccess: () => {
+      queryClient.invalidateQueries(['get-comments']);
+    },
+  });
 
   const comment = (data: IPostComment) => {
     commentMutation.mutate(data);
