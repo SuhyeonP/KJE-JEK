@@ -3,6 +3,7 @@ import { Comment } from 'component/section/comment/Comment';
 import { colorPalette } from 'color/colorPalette';
 import { useState } from 'react';
 import { Button } from 'component/common/Button';
+import { useQuery } from '@tanstack/react-query';
 
 const CommentsStyled = styled.div`
   position: relative;
@@ -47,6 +48,30 @@ const commentsDummy = [
   },
 ];
 
+//{
+//   "comments": [
+//     {
+//       "id": 0,
+//       "author": "string",
+//       "content": "string",
+//       "emoji": "string",
+//       "created_at": "string"
+//     }
+//   ]
+// }
+
+interface IComment {
+  id: number;
+  author: string;
+  content: string;
+  emoji: string;
+  created_at: string;
+}
+
+const getComment = (page: number) => {
+  return fetch(`http://localhost:8080/v1/comments?page=${page}`).then(res => res.json());
+};
+
 export const Comments = (): JSX.Element => {
   const [total] = useState(10);
   const [count] = useState(50);
@@ -54,13 +79,27 @@ export const Comments = (): JSX.Element => {
     console.log('get more');
   };
 
+  const { data } = useQuery<any, any, Record<'comments', IComment[]>>(
+    ['get-comments'],
+    async () => await getComment(1),
+    {
+      onSuccess: data => {
+        console.log(data);
+      },
+    }
+  );
+
   return (
     <CommentsStyled>
       <p>댓글 {total}</p>
-      {commentsDummy.map(comment => (
-        <CommentWrapper key={comment.id}>
-          <Comment emoji={comment.emoji} writer={comment.author} comment={comment.content} time={comment.created_at} />
-        </CommentWrapper>
+      {data?.comments.map(comment => (
+        <Comment
+          key={comment.id}
+          emoji={comment.emoji}
+          writer={comment.author}
+          comment={comment.content}
+          time={comment.created_at}
+        />
       ))}
       <Button onClick={getMoreComment} backgroundColor={colorPalette.sub_sky_blue}>
         {count}개 댓글 더보기

@@ -15,7 +15,7 @@ init: install-poetry
 	poetry install
 
 format:
-	poetry run black . 
+	poetry run black .
 	poetry run isort . --skip-gitignore --profile black
 
 lint:
@@ -56,7 +56,8 @@ docker-run-postgres:
 	@echo "You can access PostgreSQL on localhost:5432 now"
 	@echo "user: $(POSTGRES_USER), password: $(POSTGRES_PASSWORD), default_database: $(POSTGRES_DB)"
 
-run-server: docker-rerun-postgres
+# run-server: docker-rerun-postgres
+run-server:
 	@echo "Run server";\
 	PYTHONPATH=src/
 	poetry run uvicorn src.modak.main:app --reload --host=0.0.0.0 --port=8080 --no-access-log
