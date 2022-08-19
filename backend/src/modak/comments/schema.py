@@ -48,9 +48,9 @@ class CommentData(BaseModelORMTrue):
         logger.info(f"Convert created_at to string: {v}")
 
         if isinstance(v, datetime):
-            return v.strftime("%Y.%-m.%-d %H:%M")
+            return v.strftime("%Y/%-m/%-d %H:%M UTC")
         elif isinstance(v, str):
-            datetime.strptime(v, "%Y.%m.%d %H:%M")
+            datetime.strptime(v, "%Y/%m/%d %H:%M UTC")
             return v
 
 
