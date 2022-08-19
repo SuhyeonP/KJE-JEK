@@ -28,21 +28,32 @@ interface IHandleData {
   data: IComment[];
   page: number;
   isLast: boolean;
+  total: number;
 }
 
 const getComment = async (page: number) => {
-  const data = await fetch(`http://localhost:8080/v1/comments?page=${page}&page_size=3`).then(res => res.json());
-  return { data: data.comments, page: page + 1, isLast: false };
+  const data = await fetch(`http://localhost:8080/v1/comments?page=${page}&page_size=5`).then(res => res.json());
+  return {
+    data: data.comments,
+    page: page + 1,
+    isLast: data.total_items === data.comments.length + (page - 1) * 5,
+    total: data.total_items,
+  };
 };
 
 export const Comments = (): JSX.Element => {
-  const [total] = useState(10);
+  const [total, setTotal] = useState(0);
+  const [isLast, setIsLast] = useState(false);
 
   const { data, fetchNextPage } = useInfiniteQuery<any, any, IHandleData>(
     ['get-comments'],
     ({ pageParam = 1 }) => getComment(pageParam),
     {
       getNextPageParam: lastPage => (!lastPage.isLast ? lastPage.page : undefined),
+      onSuccess: data => {
+        setTotal(data.pages[data.pages.length - 1].total);
+        setIsLast(data.pages[data.pages.length - 1].isLast);
+      },
     }
   );
   const getMoreComment = () => {
@@ -63,9 +74,11 @@ export const Comments = (): JSX.Element => {
           />
         ))
       )}
-      <Button onClick={getMoreComment} backgroundColor={colorPalette.sub_sky_blue}>
-        댓글 더 보기
-      </Button>
+      {!isLast && (
+        <Button onClick={getMoreComment} backgroundColor={colorPalette.sub_sky_blue}>
+          댓글 더 보기
+        </Button>
+      )}
     </CommentsStyled>
   );
 };

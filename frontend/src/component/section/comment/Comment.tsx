@@ -49,6 +49,9 @@ export const Comment = ({ emoji, writer, comment, time }: ICommentProps): JSX.El
 
     if (compare.gap === 'today') {
       if (compare.minuteGap < 60) {
+        if (compare.minuteGap < 1) {
+          return '방금 전';
+        }
         return `${compare.minuteGap}분 전`;
       }
       return `${compare.hourGap} 시간 전`;
