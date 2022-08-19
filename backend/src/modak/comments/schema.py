@@ -58,6 +58,7 @@ class CommentDataList(BaseModelORMTrue):
     """Comment data list model."""
 
     comments: List[CommentData]
+    total_items: int
 
 
 class CommentCreateOut(CommentData):
