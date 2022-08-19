@@ -1,12 +1,46 @@
 import styled from '@emotion/styled';
 import { useMemo, useRef } from 'react';
 import { getDateOfGap } from 'date-preset/src/getDateGap';
+import { colorPalette } from 'color/colorPalette';
 
 const CommentStyled = styled.div`
+  box-shadow: 5px 5px 8px ${colorPalette.shadow_color};
+  border-radius: 8px;
+
+  padding: 17px 30px;
+  margin-bottom: 30px;
+
+  min-height: 116px;
+
   .comment-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    padding-bottom: 10px;
+
+    .comment-writer-info {
+      display: flex;
+      width: 80%;
+    }
+
+    .emoji {
+      padding-right: 10px;
+    }
+
+    .comment-writer {
+      flex: 1;
+
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      word-break: break-all;
+    }
+
+    .comment-created-at {
+      font-size: 13px;
+      color: ${colorPalette.time_color};
+    }
   }
 `;
 
@@ -29,6 +63,9 @@ export const Comment = ({ emoji, writer, comment, time }: ICommentProps): JSX.El
 
     if (compare.gap === 'today') {
       if (compare.minuteGap < 60) {
+        if (compare.minuteGap < 1) {
+          return '방금 전';
+        }
         return `${compare.minuteGap}분 전`;
       }
       return `${compare.hourGap} 시간 전`;
@@ -47,10 +84,10 @@ export const Comment = ({ emoji, writer, comment, time }: ICommentProps): JSX.El
     <CommentStyled>
       <div className="comment-header">
         <div className="comment-writer-info">
-          <span>{emoji}</span>
-          <span>{writer}</span>
+          <span className="emoji">{emoji}</span>
+          <span className="comment-writer">{writer}</span>
         </div>
-        <span>{timeFormatter}</span>
+        <span className="comment-created-at">{timeFormatter}</span>
       </div>
       <div className="comment-content">
         <p>{comment}</p>

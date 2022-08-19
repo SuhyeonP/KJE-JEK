@@ -37,12 +37,18 @@ class CommentDB(LoggingMixin):
                 .order_by(
                     getattr(Comment, order_by).asc()
                     if asc
-                    else getattr(Comment, order_by).desc()
+                    else getattr(Comment, order_by).desc(),
                 )
                 .offset((page - 1) * page_size)
                 .limit(page_size)
                 .all()
             )
+
+    def count_all(self) -> int:
+        """Count all comments."""
+
+        with self.session_factory() as session:
+            return session.query(Comment).count()
 
     def add(self, comment: Comment) -> Comment:
         """Add a comment."""

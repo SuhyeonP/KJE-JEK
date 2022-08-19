@@ -27,8 +27,9 @@ class CommentService(LoggingMixin):
             order_by=order_by,
             asc=asc,
         )
+        total_items = self._comment_db.count_all()
 
-        return CommentDataList(comments=comments)
+        return CommentDataList(comments=comments, total_items=total_items)
 
     def create(self, comment_create_in: CommentCreateIn) -> CommentData:
         """Create a comment."""

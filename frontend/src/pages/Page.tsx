@@ -23,7 +23,7 @@ const PageStyled = styled.div`
   .section {
     margin-top: 50vh;
     & > div {
-      min-height: calc(100vh - 48.43px);
+      //min-height: calc(100vh - 48.43px);
     }
   }
 `;

@@ -42,8 +42,8 @@ const WhoIsModakStyled = styled.div`
         width: 90%;
       }
       .slick-dots {
-        top: 0;
         height: 20px;
+        bottom: 0;
       }
     }
 

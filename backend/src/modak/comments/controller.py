@@ -34,7 +34,7 @@ async def get_comments(
 
 @router.post("", response_model=CommentCreateOut)
 async def create_comment(
-    comment_create_in: CommentCreateIn = Depends(),
+    comment_create_in: CommentCreateIn,
     comment_service: CommentService = Depends(),
 ) -> CommentCreateOut:
     """Create a comment."""
