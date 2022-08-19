@@ -19,8 +19,22 @@ const CommentStyled = styled.div`
 
     padding-bottom: 10px;
 
+    .comment-writer-info {
+      display: flex;
+      width: 80%;
+    }
+
     .emoji {
       padding-right: 10px;
+    }
+
+    .comment-writer {
+      flex: 1;
+
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      word-break: break-all;
     }
 
     .comment-created-at {
@@ -71,7 +85,7 @@ export const Comment = ({ emoji, writer, comment, time }: ICommentProps): JSX.El
       <div className="comment-header">
         <div className="comment-writer-info">
           <span className="emoji">{emoji}</span>
-          <span>{writer}</span>
+          <span className="comment-writer">{writer}</span>
         </div>
         <span className="comment-created-at">{timeFormatter}</span>
       </div>

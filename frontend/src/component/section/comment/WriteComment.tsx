@@ -95,6 +95,7 @@ export const WriteComment = (): JSX.Element => {
             autoComplete="off"
             placeholder="이름을 입력해주세요."
             {...register('author')}
+            maxLength={50}
           />
           <textarea
             className="comment-content"
