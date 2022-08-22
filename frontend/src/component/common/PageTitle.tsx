@@ -4,12 +4,12 @@ interface IStyledProps {
   color: string;
 }
 
-const PageTitleStyled = styled.span<IStyledProps>(
+const PageTitleStyled = styled.div<IStyledProps>(
   ({ color }) => `
   color: ${color};
-  font-size: 28px;
-  font-family: 'AppleSDGothicNeo', 'Noto Sans KR', sans-serif;
-  font-weight: 800;
+  font-size: 34px;
+  font-family: 'AppleSDGothicNeo-Heavy';
+  margin-bottom: 10px;
 `
 );
 

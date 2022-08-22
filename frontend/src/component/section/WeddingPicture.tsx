@@ -47,13 +47,21 @@ const WeddingPictureStyled = styled.div`
   }
 
   .slick-dots {
+    list-style: none; 
     & > li {
-      width: 15px;
+      width: 7px;
       height: 15px;
       & > button {
         padding: 0;
-        width: 15px;
-        height: 15px;
+        width: 5px;
+        height: 5px;
+      }
+      & > button::before {
+        content: '●';
+        color: ${colorPalette.main_red};
+        font-size: 12px;
+        width: 5px;
+        height: 5px;
       }
     }
   }
@@ -68,7 +76,8 @@ export const WeddingPicture = (): JSX.Element => {
     slidesToScroll: 1,
     arrows: false,
     className: 'slider-wrapper',
-    // adaptiveHeight: true,
+    adaptiveHeight: false,
+    // dotsClass: 'slick-dots',
   };
   return (
     <WeddingPictureStyled>

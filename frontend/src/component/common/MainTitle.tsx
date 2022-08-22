@@ -6,7 +6,7 @@ interface IStyledProps {
   ls?: string;
 }
 
-export const MainTitle = styled.span<IStyledProps>(
+export const MainTitle = styled.div<IStyledProps>(
   ({ color = colorPalette.main_red, ls = '1px' }) => `
   color: ${color};
   font-weight: 400;

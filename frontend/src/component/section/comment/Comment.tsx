@@ -6,8 +6,9 @@ import { colorPalette } from 'color/colorPalette';
 const CommentStyled = styled.div`
   box-shadow: 5px 5px 8px ${colorPalette.shadow_color};
   border-radius: 8px;
+  background-color: ${colorPalette.white};
 
-  padding: 17px 30px;
+  padding: 20px 25px 18px 25px;
   margin-bottom: 30px;
 
   min-height: 116px;
@@ -17,11 +18,13 @@ const CommentStyled = styled.div`
     align-items: center;
     justify-content: space-between;
 
-    padding-bottom: 10px;
+    margin-bottom: 13px;
 
     .comment-writer-info {
       display: flex;
       width: 80%;
+      font-size: 15px;
+      font-family: 'AppleSDGothicNeo-Bold';
     }
 
     .emoji {
@@ -41,6 +44,14 @@ const CommentStyled = styled.div`
       font-size: 13px;
       color: ${colorPalette.time_color};
     }
+
+  }
+
+  .comment-content {
+    & > p {
+      font-size: 14px;
+      line-height: 1.5;
+    }
   }
 `;
 
@@ -58,7 +69,7 @@ export const Comment = ({ emoji, writer, comment, time }: ICommentProps): JSX.El
     const randomNumber = Math.floor(Math.random() * 10);
 
     if ([0, 1].indexOf(randomNumber) === 1) {
-      return ['김치전', '파전', '굴전', '호박전', '녹두전', '감자전', '육전'][Math.floor(Math.random() * 7)];
+      return ['김치전', '파전', '굴전', '호박전', '녹두전', '감자전'][Math.floor(Math.random() * 7)];
     }
 
     if (compare.gap === 'today') {

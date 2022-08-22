@@ -9,42 +9,59 @@ const WeddingInfoStyled = styled.div`
   width: 100%;
   text-align: center;
 
+  .wedding-info-title {
+    font-size: 48px;
+  }
+
   .wedding-info {
-    padding-top: 9px;
+    padding-top: 36px;
+    color: ${colorPalette.main_red};
+    
     p[class|='wedding-info'] {
+      font-family: 'AppleSDGothicNeo-SemiBold';
       font-size: 17px;
-      padding-top: 25px;
+      margin-bottom: 16px;
     }
     .special-no-thanks {
       padding-top: 20px;
-      font-size: 13px;
+      font-size: 14px;
     }
   }
 
   .toggle-wedding-info {
     width: 100%;
-    color: ${colorPalette.white};
-    background-color: ${colorPalette.main_blue};
-    padding: 19px 0;
+    color: ${colorPalette.main_red};
+    background-color: ${colorPalette.main_pink};
 
     margin-top: 70px;
+    // margin-bottom: 70px;
 
     button {
       background-color: inherit;
-      border: 0;
+      border: 1px solid ${colorPalette.main_red};
+      border-radius: 10px;
       outline: 0;
       color: inherit;
+      height: 57px;
+      width: 100%;
     }
   }
 
+  .wedding-info-detailed {
+    background-color: ${colorPalette.white};
+  }
+
   .map-img {
-    margin: 70px 0;
-    width: 90%;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    width: 110%;
+    left: -10%;
+    position: relative;
   }
 
   .how-to-come {
     display: block;
-    width: 93%;
+    width: 85%;
     margin: 0 auto;
     text-align: left;
 
@@ -52,12 +69,19 @@ const WeddingInfoStyled = styled.div`
       padding: 10px 0;
 
       & > p {
-        font-weight: 400;
+        font-family: 'AppleSDGothicNeo-Regular';
+        font-size: 15px;
+        letter-spacing: -0.06px;
+        line-spacing: 34px;
+        margin-bottom: 15px;
       }
 
       p[class|='come'] {
-        padding-bottom: 10px;
-        font-weight: 800;
+        font-family: 'AppleSDGothicNeo-ExtraBold';
+        font-size: 16px;
+        letter-spacing: -0.06px;
+        line-spacing: 34px;
+        margin-top: 14px;
       }
     }
 
@@ -71,12 +95,13 @@ export const WeddingInfo = (): JSX.Element => {
   const [isOpen, setIsOpen] = useState(false);
   const openMap = () => {
     console.log('go map');
+    // <button onClick={() => window.open('[url 링크]', '_blank')}>[url 링크]</button>
   };
 
   return (
-    <Layout color={colorPalette.white}>
+    <Layout color={colorPalette.main_pink}>
       <WeddingInfoStyled>
-        <MainTitle color={colorPalette.main_blue} className="wedding-info-title">
+        <MainTitle color={colorPalette.main_red} className="wedding-info-title">
           결혼식 정보
         </MainTitle>
         <div className="wedding-info">
@@ -91,7 +116,7 @@ export const WeddingInfo = (): JSX.Element => {
           </button>
         </div>
         {isOpen && (
-          <>
+          <div className='wedding-info-detailed'>
             <img src="assets/images/map.png" className="map-img" />
             <div role="ul" className="how-to-come">
               <div role="li">
@@ -100,18 +125,18 @@ export const WeddingInfo = (): JSX.Element => {
               </div>
               <div role="li">
                 <p className="come-bus">버스로 오실 때</p>
-                <p>- 145, 440, 4212번 버스 타고 언북중학교 입구 하차</p>
-                <p>- 141, 3600번 버스 타고 서울세관 하차</p>
+                <p>• 145, 440, 4212번 버스 타고 언북중학교 입구 하차</p>
+                <p>• 141, 3600번 버스 타고 서울세관 하차</p>
               </div>
               <div role="li">
                 <p className="come-car">자가용으로 오실 때</p>
-                <p>식장 앞에서 주차 안내 예정</p>
+                <p>'토브헤세드' 식장 앞에서 주차 안내 예정</p>
               </div>
               <Button onClick={openMap} backgroundColor={colorPalette.sub_sky_blue}>
                 네이버지도 바로가기
               </Button>
             </div>
-          </>
+          </div>
         )}
       </WeddingInfoStyled>
     </Layout>

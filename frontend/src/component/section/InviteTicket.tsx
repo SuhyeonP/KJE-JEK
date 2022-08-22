@@ -4,10 +4,14 @@ import { MainTitle } from 'component/common';
 
 const InviteTicketStyled = styled.div`
   display: block;
-  width: 90%;
+  width: 85%;
   margin: 180px auto 170px;
 
   text-align: center;
+
+  .special-event {
+    font-size: 42px;
+  }
 
   .invite-you {
     margin-top: 21px;
@@ -30,7 +34,8 @@ const InviteTicketStyled = styled.div`
       display: inline-block;
       width: 70%;
 
-      margin-top: 60px;
+      margin-top: 50px;
+      margin-bottom: 50px;
 
       box-shadow: 5px 5px 8px #00000024;
     }
@@ -40,7 +45,7 @@ const InviteTicketStyled = styled.div`
 export const InviteTicket = (): JSX.Element => {
   return (
     <InviteTicketStyled>
-      <MainTitle color={colorPalette.main_red}>SPECIAL EVENT</MainTitle>
+      <MainTitle color={colorPalette.main_red} className="special-event">SPECIAL EVENT</MainTitle>
       <div className="invite-you">
         <p>청첩장에 이름을 적어 결혼식날 가져오시면</p>
         <p>추첨을 통해 소소한 선물을 드려요.</p>

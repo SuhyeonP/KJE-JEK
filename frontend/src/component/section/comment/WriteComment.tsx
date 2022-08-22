@@ -8,10 +8,26 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 const CommentStyled = styled.div`
   display: block;
   margin: 0 auto;
-  width: 90%;
-  .comment-title {
+  width: 85%;
+  .comment-title-div {
     text-align: center;
-    padding: 155px 0 25px;
+    padding: 0px 0 25px;
+
+    .comment-title {
+      font-size: 42px;
+    }
+  }
+
+  font-family: 'AppleSDGothicNeo-Regular';
+
+  .comment-writer::placeholder {
+    color: ${colorPalette.main_gray};
+    font-family: "AppleSDGothicNeo-Regular";
+  }
+
+  .comment-content::placeholder {
+    color: ${colorPalette.main_gray};
+    font-family: "AppleSDGothicNeo-Regular";
   }
 
   .comment-form {
@@ -38,12 +54,14 @@ const CommentStyled = styled.div`
       border: 0;
       outline: 0;
       float: right;
+      color: ${colorPalette.dark_gray};
     }
   }
 
   .bye {
     display: flex;
     justify-content: center;
+    margin-bottom: 50px;
 
     .bye-modak {
       width: 80%;
@@ -80,14 +98,16 @@ export const WriteComment = (): JSX.Element => {
   });
 
   const comment = (data: IPostComment) => {
-    commentMutation.mutate(data);
+    if (data.author && data.content) {
+      commentMutation.mutate(data);
+    };
   };
 
   return (
-    <Layout color={colorPalette.white}>
+    <Layout color={colorPalette.main_pink}>
       <CommentStyled>
-        <div className="comment-title">
-          <MainTitle color={colorPalette.sub_sky_blue}>주언이와 은경이에게 전하는 말</MainTitle>
+        <div className="comment-title-div">
+          <MainTitle color={colorPalette.sub_sky_blue} className="comment-title">주언이와 은경이에게 전하는 말</MainTitle>
         </div>
         <form className="comment-form" onSubmit={handleSubmit(comment)}>
           <input

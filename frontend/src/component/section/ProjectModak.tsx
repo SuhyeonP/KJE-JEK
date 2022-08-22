@@ -32,19 +32,21 @@ const ProjectModakStyled = styled.div`
     color: white;
 
     .how-we-met {
-      padding: 100px 10px;
+      padding: 120px 10px 50px 10px;
+      width: 85%;
+      margin: 0 auto;
     }
 
     p {
       line-height: 32px;
       font-size: 16px;
-      padding: 20px 0;
-      word-spacing: 3px;
+      padding: 18px 0;
+      word-spacing: 0px;
     }
   }
 `;
 const content1 =
-  'PROJECT MODAK 모닥불 앞에서 처음 만난 순간부터 시작된 주언이와 은경이의 인연을 하나의 협동 프로젝트에 비유한 것입니다.';
+  '모닥프로젝트는 모닥불 앞에서 처음 만난 순간부터 시작된 주언이와 은경이의 인연을 하나의 협동 프로젝트에 비유한 것입니다.';
 const content2 =
   '프로젝트의 목표는 모닥불이 밤을 밝히고 따뜻한 온기를 전하는 것처럼 하나님께서 기뻐하시는 가정을 이루어 주변을 밝혀주는 것입니다.';
 const content3 = '2022년 10월 1일, 저희 결혼식으로 이 프로젝트의 시작을 알리려 합니다.';
@@ -58,7 +60,7 @@ export const ProjectModak = (): JSX.Element => {
             <img src="assets/images/modaki-01.png" />
           </div>
           <div className="how-we-met">
-            <PageTitle content="Project Modak" />
+            <PageTitle content="PROJECT MODAK" />
             <p>{content1}</p>
             <p>{content2}</p>
             <p>{content3}</p>

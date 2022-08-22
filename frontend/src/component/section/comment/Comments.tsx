@@ -13,6 +13,17 @@ const CommentsStyled = styled.div`
 
   .comment-count {
     padding-bottom: 18px;
+    font-family: 'AppleSDGothicNeo-Bold';
+    & > span {
+      color: ${colorPalette.sub_sky_blue};
+    }
+  }
+
+  .more-comments {
+    background-color: ${colorPalette.main_pink};
+    border: 1px solid ${colorPalette.sub_sky_blue};
+    color: ${colorPalette.sub_sky_blue};
+    font-family: 'AppleSDGothicNeo-Bold';
   }
 `;
 
@@ -62,7 +73,7 @@ export const Comments = (): JSX.Element => {
 
   return (
     <CommentsStyled>
-      <p className="comment-count">댓글 {total}</p>
+      <p className="comment-count">댓글 <span>{total}</span></p>
       {data?.pages.map(page =>
         page.data.map(comment => (
           <Comment
@@ -75,8 +86,8 @@ export const Comments = (): JSX.Element => {
         ))
       )}
       {!isLast && (
-        <Button onClick={getMoreComment} backgroundColor={colorPalette.sub_sky_blue}>
-          댓글 더 보기
+        <Button className="more-comments" onClick={getMoreComment} backgroundColor={colorPalette.sub_sky_blue}>
+          5개 댓글 더보기
         </Button>
       )}
     </CommentsStyled>
