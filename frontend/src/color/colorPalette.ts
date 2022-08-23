@@ -3,6 +3,7 @@ export const colorPalette = {
   sub_blue: '#016AB9',
   sub_sky_blue: '#80CCE3',
   main_red: '#E60B12',
+  bright_red: '#FF0000',
   sub_red: '#be191f',
   white: '#fff',
   main_gray: 'rgba(0, 0, 0, 0.4)',

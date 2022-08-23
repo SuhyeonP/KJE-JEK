@@ -17,6 +17,11 @@ const WhoIsModakStyled = styled.div`
     color: ${colorPalette.main_red};
     font-size: 15px;
     line-height: 24px;
+    margin-bottom: 40px;
+
+    & > p {
+      margin-bottom: 7px;
+    }
   }
 
   .modak-profile {
@@ -113,8 +118,8 @@ export const WhoIsModak = (): JSX.Element => {
       <MainTitle color={colorPalette.main_red}>모닥이 소개서</MainTitle>
       <div className="modak-history">
         <p>모닥이는 모닥불에서 영감을 받아 탄생한 캐릭터입니다.</p>
-        <p>프로필에서부터 과거 사진들까지</p>
-        <p>모닥이에 대해 소개해드릴게요!</p>
+        <p>최초 스케치에서부터 지금 모습이 되기까지</p>
+        <p>달라진 모습을 확인해보세요!</p>
       </div>
       <div className="modak-profile">
         <div className="modak-simple">
@@ -153,8 +158,7 @@ export const WhoIsModak = (): JSX.Element => {
           </div>
         </div>
       </div>
-      <Button backgroundColor={colorPalette.main_red}>모다기 굿즈 보러가기</Button>
-      {/* // <button onClick={() => window.open('[url 링크]', '_blank')}>[url 링크]</button> */}
+      <Button backgroundColor={colorPalette.main_red} onClick={() => window.open('https://marpple.shop/kr/modak?page=0', '_blank')}>모다기 굿즈 보러가기</Button>
     </WhoIsModakStyled>
   );
 };

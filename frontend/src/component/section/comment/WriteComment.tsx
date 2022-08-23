@@ -38,7 +38,7 @@ const CommentStyled = styled.div`
       padding: 17px 21px;
       border-radius: 8px;
       outline: 0;
-      border: 1px solid ${colorPalette.main_gray};
+      border: 0px solid ${colorPalette.main_gray};
     }
 
     .comment-writer {
@@ -55,6 +55,7 @@ const CommentStyled = styled.div`
       outline: 0;
       float: right;
       color: ${colorPalette.dark_gray};
+      font-size: 15px;
     }
   }
 

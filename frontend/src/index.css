@@ -1,10 +1,61 @@
-@font-face {
+/* @font-face {
   font-family: '116watermelon';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.0/116watermelon.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+} */
+
+@font-face {
+  font-family: '116watermelon';
+  src: local('116watermelon.ttf'), url('./public/fonts/116watermelon.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
+@font-face {
+  font-family: 'AppleSDGothicNeo-Regular';
+  src: local('AppleSDGothicNeo-Regular.ttf'), url('./public/fonts/AppleSDGothicNeo-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'AppleSDGothicNeo-Bold';
+  src: local('AppleSDGothicNeo-Bold.ttf'), url('./public/fonts/AppleSDGothicNeo-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'AppleSDGothicNeo-ExtraBold';
+  src: local('AppleSDGothicNeo-ExtraBold.ttf'), url('./public/fonts/AppleSDGothicNeo-ExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'AppleSDGothicNeo-Heavy';
+  src: local('AppleSDGothicNeo-Heavy.ttf'), url('./public/fonts/AppleSDGothicNeo-Heavy.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'AppleSDGothicNeo-Light';
+  src: local('AppleSDGothicNeo-Light.ttf'), url('./public/fonts/AppleSDGothicNeo-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'AppleSDGothicNeo-Medium';
+  src: local('AppleSDGothicNeo-Medium.ttf'), url('./public/fonts/AppleSDGothicNeo-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'AppleSDGothicNeo-SemiBold';
+  src: local('AppleSDGothicNeo-SemiBold.ttf'), url('./public/fonts/AppleSDGothicNeo-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'AppleSDGothicNeo-Thin';
+  src: local('AppleSDGothicNeo-Thin.ttf'), url('./public/fonts/AppleSDGothicNeo-Thin.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'AppleSDGothicNeo-UltraLight';
+  src: local('AppleSDGothicNeo-UltraLight.ttf'), url('./public/fonts/AppleSDGothicNeo-UltraLight.ttf') format('truetype');
+}
 
 p {
   font-family: 'AppleSDGothicNeo-Regular', 'Noto Sans KR', sans-serif;

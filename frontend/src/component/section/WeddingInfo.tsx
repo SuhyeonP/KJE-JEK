@@ -16,6 +16,8 @@ const WeddingInfoStyled = styled.div`
   .wedding-info {
     padding-top: 36px;
     color: ${colorPalette.main_red};
+    width: 85%;
+    margin: 0 auto;
     
     p[class|='wedding-info'] {
       font-family: 'AppleSDGothicNeo-SemiBold';
@@ -25,6 +27,8 @@ const WeddingInfoStyled = styled.div`
     .special-no-thanks {
       padding-top: 20px;
       font-size: 14px;
+      line-height: 26px;
+      text-align: left;
     }
   }
 
@@ -43,7 +47,7 @@ const WeddingInfoStyled = styled.div`
       outline: 0;
       color: inherit;
       height: 57px;
-      width: 100%;
+      width: 85%;
     }
   }
 
@@ -108,7 +112,7 @@ export const WeddingInfo = (): JSX.Element => {
           <p className="wedding-info-time">2022년 10월 1일 (토) 18:30</p>
           <p className="wedding-info-location">서울특별시 강남구 도산대로 38길 32 토브헤세드</p>
           <p className="wedding-info-dress">드레스코드: 단풍색 (레드, 그린, 머스타드, 브라운)</p>
-          <p className="special-no-thanks">* 축하 화환은 정중히 사양합니다. 마음만 감사히 받겠습니다.</p>
+          <p className="special-no-thanks">* 드레스코드는 옷차림의 색상입니다. 단풍색과 비슷한 색상의 의상을 입어주시면 더 즐거운 시간이 될 것 같습니다. 물론, 필수는 아니니 부담갖지 않으셔도 되며, 포인트만 주셔도 무방합니다.</p>
         </div>
         <div className="toggle-wedding-info">
           <button type="button" onClick={() => setIsOpen(prev => !prev)}>
@@ -132,7 +136,7 @@ export const WeddingInfo = (): JSX.Element => {
                 <p className="come-car">자가용으로 오실 때</p>
                 <p>'토브헤세드' 식장 앞에서 주차 안내 예정</p>
               </div>
-              <Button onClick={openMap} backgroundColor={colorPalette.sub_sky_blue}>
+              <Button onClick={() => window.open('http://naver.me/Gptov4hj', '_blank')} backgroundColor={colorPalette.sub_sky_blue}>
                 네이버지도 바로가기
               </Button>
             </div>

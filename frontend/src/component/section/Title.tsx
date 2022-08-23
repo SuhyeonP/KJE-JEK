@@ -10,12 +10,11 @@ const TitleStyled = styled.div`
   z-index: 100;
 
   text-align: center;
-  line-height: 1.2;
 
   .main-logo {
     height: 48.43px;
-    top: 1.5px;
-    position: relative;
+    vertical-align: middle;
+    margin: 3px 0;
   }
 `;
 
