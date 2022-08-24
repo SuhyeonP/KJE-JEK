@@ -98,6 +98,18 @@ const WhoIsModakStyled = styled.div`
       }
     }
   }
+
+  @media screen and (min-width: 390px) {
+    .modak-history {
+      font-size: 15px;
+    }
+  }
+
+  @media screen and (max-width: 389px) {
+    .modak-history {
+      font-size: 14px;
+    }
+  }
 `;
 const modaks = Array.from({ length: 9 }, (_, idx) => idx + 1);
 

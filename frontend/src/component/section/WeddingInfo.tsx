@@ -93,6 +93,18 @@ const WeddingInfoStyled = styled.div`
       margin: 40px 0 100px;
     }
   }
+
+  @media screen and (min-width: 390px) {
+    .wedding-info > p[class|='wedding-info'] {
+      font-size: 17px;
+    }
+  }
+
+  @media screen and (max-width: 389px) {
+    .wedding-info > p[class|='wedding-info'] {
+      font-size: 16px;
+    }
+  }
 `;
 
 export const WeddingInfo = (): JSX.Element => {

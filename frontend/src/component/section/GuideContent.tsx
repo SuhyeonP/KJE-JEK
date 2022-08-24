@@ -43,6 +43,18 @@ const GuideContentStyled = styled.div`
   .modak-img {
     text-align: center;
   }
+
+  @media screen and (min-width: 390px) {
+    p {
+      font-size: 18px;
+    }
+  }
+
+  @media screen and (max-width: 389px) {
+    p {
+      font-size: 17px;
+    }
+  }
 `;
 
 const content1 =
