@@ -30,7 +30,7 @@ const WeddingPictureStyled = styled.div`
   @media screen and (min-width: 430px) {
     .slider-wrapper {
       display: block;
-      width: 60%;
+      width: 70%;
       margin: 0 auto;
     }
   }
