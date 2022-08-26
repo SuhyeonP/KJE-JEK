@@ -5,4 +5,5 @@ init-backend:
 	make -C backend init
 
 run-backend:
+	make -C backend docker-rerun-postgres
 	make -C backend run-server

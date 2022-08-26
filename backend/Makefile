@@ -65,3 +65,15 @@ run-server:
 discard-postgres-data:
 	@echo "Discard postgres data";\
 	rm -rf ${POSTGRES_LOCAL_MOUNT_DIR}
+
+########################
+# Docker build and run #
+########################
+
+docker-build:
+	@echo "Build docker image";\
+	docker build -f docker/modak/Dockerfile -t modak .
+
+docker-run:
+	@echo "Run docker image";\
+	docker run -it --rm -p 8080:8080 modak
