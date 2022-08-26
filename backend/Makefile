@@ -74,6 +74,10 @@ docker-build:
 	@echo "Build docker image";\
 	docker build -f docker/modak/Dockerfile -t modak .
 
+docker-push:
+	@echo "Push docker image";\
+	docker push modak
+
 docker-run:
 	@echo "Run docker image";\
 	docker run -it --rm -p 8080:8080 modak
