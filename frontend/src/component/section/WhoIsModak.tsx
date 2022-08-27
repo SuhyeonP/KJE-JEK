@@ -170,7 +170,7 @@ export const WhoIsModak = (): JSX.Element => {
           </div>
         </div>
       </div>
-      <Button backgroundColor={colorPalette.main_red} onClick={() => window.open('https://marpple.shop/kr/modak?page=0', '_blank')}>모다기 굿즈 보러가기</Button>
+      <Button backgroundColor={colorPalette.main_red} onClick={() => window.open('https://marpple.shop/kr/modak?page=0', '_blank')}>모닥이 굿즈 보러가기</Button>
     </WhoIsModakStyled>
   );
 };
