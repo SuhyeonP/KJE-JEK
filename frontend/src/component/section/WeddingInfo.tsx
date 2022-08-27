@@ -8,6 +8,7 @@ const WeddingInfoStyled = styled.div`
   padding: 79px 0 0;
   width: 100%;
   text-align: center;
+  overflow: hidden;
 
   .wedding-info-title {
     font-size: 48px;
