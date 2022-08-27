@@ -16,5 +16,21 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      const images = [
+          "assets/images/map.png",
+          "assets/images/wedding/4V4A4545-1.jpg"
+      ];
+
+      const preload = (images) => {
+          images.forEach((image) => {
+              const img = new Image();
+              img.src = image;
+          });
+      };
+
+      preload(images);
+      console.log("preload complete");
+    </script>
   </body>
 </html>
