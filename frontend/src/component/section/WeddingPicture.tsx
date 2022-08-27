@@ -14,7 +14,7 @@ const imgs = [
   '4867',
   '4896',
   '5028-1',
-  '5139',
+  // '5139',
   '5265',
   '5297',
   '5331',
@@ -71,9 +71,11 @@ export const WeddingPicture = (): JSX.Element => {
   const settings = {
     dots: true,
     speed: 500,
-    infinite: false,
+    infinite: true,
+    lazyLoad: false,
     slidesToShow: 1,
     slidesToScroll: 1,
+    swipeToSlide: true,
     arrows: false,
     className: 'slider-wrapper',
     adaptiveHeight: false,
@@ -82,7 +84,7 @@ export const WeddingPicture = (): JSX.Element => {
   return (
     <WeddingPictureStyled>
       <div className="main-title">
-        <MainTitle color={colorPalette.main_red}>웨딩 사진 보기</MainTitle>
+        <MainTitle color={colorPalette.main_red}>웨딩 사진</MainTitle>
       </div>
       <Slider {...settings}>
         {imgs.map(ele => (
