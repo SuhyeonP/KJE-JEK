@@ -87,7 +87,7 @@ export const Comments = (): JSX.Element => {
       )}
       {!isLast && (
         <Button className="more-comments" onClick={getMoreComment} backgroundColor={colorPalette.sub_sky_blue}>
-          5개 댓글 더보기
+          댓글 더보기
         </Button>
       )}
     </CommentsStyled>
