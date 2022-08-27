@@ -55,7 +55,10 @@ const CommentStyled = styled.div`
       outline: 0;
       float: right;
       color: ${colorPalette.dark_gray};
+      font-family: 'AppleSDGothicNeo-Medium';
       font-size: 15px;
+      right: 15px;
+      position: relative;
     }
   }
 
