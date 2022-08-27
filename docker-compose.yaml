@@ -2,6 +2,7 @@ version: "3.9"
 services:
   postgres:
     image: postgres
+    container_name: postgres
     ports:
       - "5432:5432"
     volumes:
@@ -11,13 +12,9 @@ services:
       - POSTGRES_PASSWORD=modaki2017!
       - POSTGRES_DB=modak
     restart: always
-  frontend:
-    image: modak-front
-    ports:
-      - "80:80"
-    restart: always
   backend:
     image: modak
+    container_name: modak
     ports:
       - "8080:8080"
     environment:
@@ -28,4 +25,14 @@ services:
       - postgres
     links:
       - postgres
+    restart: always
+  frontend:
+    image: modak-front
+    ports:
+      - "80:80"
+    environment:
+      - BACKEND_HOST=modak
+      - BACKEND_PORT=8080
+    depends_on:
+      - modak
     restart: always

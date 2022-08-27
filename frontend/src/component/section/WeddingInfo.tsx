@@ -128,7 +128,7 @@ export const WeddingInfo = (): JSX.Element => {
         </div>
         <div className="toggle-wedding-info">
           <button type="button" onClick={() => setIsOpen(prev => !prev)}>
-            찾아오시는 길 자세히 보기 {isOpen ? '▼' : '▲'}
+            찾아오시는 길 자세히 보기 {isOpen ? '▲' : '▼'}
           </button>
         </div>
         {isOpen && (

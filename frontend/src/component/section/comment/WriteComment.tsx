@@ -76,7 +76,7 @@ interface IPostComment {
 }
 
 const postComment = (request: IPostComment) => {
-  return fetch('http://localhost:8080/v1/comments', {
+  return fetch(`/v1/comments`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -88,6 +88,7 @@ const postComment = (request: IPostComment) => {
 
 export const WriteComment = (): JSX.Element => {
   const { register, handleSubmit, setValue } = useForm<IPostComment>();
+  // const { register, setValue, getValues } = useForm<IPostComment>();
   const queryClient = useQueryClient();
 
   const commentMutation = useMutation<any, any, IPostComment>(postComment, {
@@ -103,6 +104,16 @@ export const WriteComment = (): JSX.Element => {
       commentMutation.mutate(data);
     };
   };
+
+  // const comment = () => {
+  //   console.log(getValues("author"), getValues("content"));
+  //   if (getValues("author") && getValues("content")) {
+  //     commentMutation.mutate({
+  //       "author": getValues("author"),
+  //       "content": getValues("content"),
+  //     });
+  //   }
+  // }
 
   return (
     <Layout color={colorPalette.main_pink}>

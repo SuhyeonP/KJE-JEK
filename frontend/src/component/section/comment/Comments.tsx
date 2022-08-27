@@ -43,7 +43,7 @@ interface IHandleData {
 }
 
 const getComment = async (page: number) => {
-  const data = await fetch(`http://localhost:8080/v1/comments?page=${page}&page_size=5`).then(res => res.json());
+  const data = await fetch(`/v1/comments?page=${page}&page_size=5`).then(res => res.json());
   return {
     data: data.comments,
     page: page + 1,
