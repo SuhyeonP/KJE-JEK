@@ -87,7 +87,7 @@ const WhoIsModakStyled = styled.div`
             font-family: 'AppleSDGothicNeo-Medium';
             font-size: 12px;
             letter-spacing: 0px;
-            color: ${colorPalette.light_gray};
+            color: ${colorPalette.dark_gray};
           }
           &:last-child {
             width: calc(100% - 80px);
@@ -99,13 +99,13 @@ const WhoIsModakStyled = styled.div`
     }
   }
 
-  @media screen and (min-width: 390px) {
+  @media screen and (min-width: 391px) {
     .modak-history {
       font-size: 15px;
     }
   }
 
-  @media screen and (max-width: 389px) {
+  @media screen and (max-width: 390px) {
     .modak-history {
       font-size: 14px;
     }

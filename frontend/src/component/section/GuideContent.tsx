@@ -45,13 +45,13 @@ const GuideContentStyled = styled.div`
     text-align: center;
   }
 
-  @media screen and (min-width: 390px) {
+  @media screen and (min-width: 391px) {
     p {
       font-size: 18px;
     }
   }
 
-  @media screen and (max-width: 389px) {
+  @media screen and (max-width: 390px) {
     p {
       font-size: 17px;
     }
