@@ -9,8 +9,9 @@ const GuideContentStyled = styled.div`
       width: 50%;
     }
   }
-
+  
   @media screen and (max-width: 429px) {
+    text-align: center;
     .modak-img {
       & > img {
         width: 80%;
@@ -27,7 +28,7 @@ const GuideContentStyled = styled.div`
     margin: 0 auto;
 
     & > div {
-      margin: 26px 0;
+      margin: 170px 0 26px 0;
     }
   }
 
