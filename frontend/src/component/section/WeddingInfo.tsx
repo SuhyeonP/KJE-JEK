@@ -49,6 +49,13 @@ const WeddingInfoStyled = styled.div`
       color: inherit;
       height: 57px;
       width: 85%;
+
+      & > img {
+        width: 14px;
+        margin: 0 0 0 6px;
+        top: 1px;
+        position: relative;
+      }
     }
   }
 
@@ -129,7 +136,9 @@ export const WeddingInfo = (): JSX.Element => {
         </div>
         <div className="toggle-wedding-info">
           <button type="button" onClick={() => setIsOpen(prev => !prev)}>
-            찾아오시는 길 자세히 보기 {isOpen ? '▲' : '▼'}
+            {/* 찾아오시는 길 자세히 보기 {isOpen ? '▲' : '▼'} */}
+            찾아오시는 길 자세히 보기
+            {isOpen ? <img className='arrow' src="assets/images/arrow-up-triangle.png" alt="arrow-up" /> : <img className='arrow' src="assets/images/arrow-down-triangle.png" alt="arrow-down" />}
           </button>
         </div>
         {isOpen && (
