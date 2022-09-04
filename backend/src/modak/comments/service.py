@@ -9,9 +9,9 @@ from modak.common.utils import Emoji, random_emoji
 class CommentService(LoggingMixin):
     """Manage service logics on comments."""
 
-    EMOJI_BLACKLIST = [
+    EMOJI_BLACKLIST = {
         "\U0001F51E",  # no one under eighteen (🔞)
-    ]
+    }
 
     def __init__(self) -> None:
         self._comment_db = CommentDB()
@@ -40,7 +40,7 @@ class CommentService(LoggingMixin):
 
         emoji: Emoji = random_emoji()
 
-        while emoji.value in self.EMOJI_BLACKLIST:
+        while emoji.codepoint in self.EMOJI_BLACKLIST:
             emoji = random_emoji()
 
         comment = Comment(
