@@ -40,6 +40,9 @@ class CommentService(LoggingMixin):
 
         emoji: Emoji = random_emoji()
 
+        while emoji.value in self.EMOJI_BLACKLIST:
+            emoji = random_emoji()
+
         comment = Comment(
             author=comment_create_in.author,
             content=comment_create_in.content,
