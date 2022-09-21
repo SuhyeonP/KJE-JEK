@@ -31,6 +31,12 @@ const WeddingInfoStyled = styled.div`
       line-height: 26px;
       text-align: left;
     }
+    .additional-info {
+      padding-top: 5px;
+      font-size: 14px;
+      line-height: 26px;
+      text-align: left;
+    }
   }
 
   .toggle-wedding-info {
@@ -133,6 +139,7 @@ export const WeddingInfo = (): JSX.Element => {
           <p className="wedding-info-location">서울특별시 강남구 도산대로 38길 32 토브헤세드</p>
           <p className="wedding-info-dress">드레스코드: 단풍색 (레드, 그린, 머스타드, 브라운)</p>
           <p className="special-no-thanks">* 드레스코드는 옷차림의 색상입니다. 단풍색과 비슷한 색상의 의상을 입어주시면 더 즐거운 시간이 될 것 같습니다. 물론, 필수는 아니니 부담갖지 않으셔도 되며, 포인트만 주셔도 무방합니다.</p>
+          <p className="additional-info">* 18시 부터 식사 가능합니다.</p>
         </div>
         <div className="toggle-wedding-info">
           <button type="button" onClick={() => setIsOpen(prev => !prev)}>
